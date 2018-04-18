@@ -1,7 +1,6 @@
 @import '../../styles/base/index';
 @import '../../styles/utilities/mixins';
 
-$hd: 1px;
 // button color
 $button-primary-color: $brand-primary;
 $button-disabled-color: $color-text-disabled;
@@ -49,6 +48,11 @@ $link-button-font-size: 16 * $hd;
   -webkit-appearance: none;
   @include hairline('all', $fill-base, $button-border-radius);
 
+  &:active {
+    &:not([aria-disabled='true']) {
+      background-color: $fill-tap;
+    }
+  }
 
   &-small {
     height: $button-height-sm;
@@ -68,7 +72,7 @@ $link-button-font-size: 16 * $hd;
     vertical-align: middle;
   }
   &--disabled {
-    opacity: 0.4;
+    opacity: 0.6;
   }
   &--inline {
     padding: 0 $h-spacing-lg;
@@ -78,6 +82,9 @@ $link-button-font-size: 16 * $hd;
     }
   }
   &--loading {
+    &.#{$prefix-name}-button {
+      color: transparent !important;
+    }
     &:after {
       position: absolute !important;
 
@@ -96,20 +103,31 @@ $link-button-font-size: 16 * $hd;
   }
 }
 
-$typeMap: ('primary', $primary-button-fill), ('warn', $warning-button-fill);
-@each $name, $background in $typeMap {
+$typeMap: ('primary', $primary-button-fill, $primary-button-fill-tap),
+  ('warn', $warning-button-fill, $warning-button-fill-tap);
+@each $name, $background, $backgroundTap in $typeMap {
   .#{$prefix-name}-button-#{$name} {
     color: $color-text-base-inverse;
     background-color: $background;
 
     @include hairline('all', $background, $button-border-radius);
-    &.#{$prefix-name}-button--disabled {
-      opacity: 0.4;
-      color: $color-text-base-inverse;
+    &:active {
+      &:not([aria-disabled='true']) {
+        background-color: $backgroundTap;
+      }
     }
-    &.#{$prefix-name}-button--outlined {
+    &.#{$prefix-name}-button--disabled {
+      opacity: 0.6;
+      color: rgba($color-text-base-inverse, 0.6);
+    }
+    &.#{$prefix-name}-button--outline {
       color: $background;
       background-color: transparent;
+      &:active {
+        &:not([aria-disabled='true']) {
+          color: $color-text-base-inverse;
+        }
+      }
     }
   }
 }

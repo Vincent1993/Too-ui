@@ -1,55 +1,53 @@
 <template>
-    <div>
-        <ButtonGroup>
-      <Button>default</Button>
-      <Button disabled>default disabled</Button>
-      <Button type="primary">
-        <i class='fab fa-github-square' slot="icon"></i>
-        primary</Button>
-      <Button type="primary" disabled>primary disabled</Button>
-      <Button type="warn">warning</Button>
-      <Button type="warn" disabled>warning disabled</Button>
-      <Button type="primary" outlined>primary outlined</Button>
-      <Button type="primary" loading>loading</Button>
-    </ButtonGroup>
+  <div class="demo-container">
     <ButtonGroup>
-      <Button size="small" inline>small</Button>
-    </ButtonGroup>
-    <ButtonGroup inline>
-      <Button type="primary" >primary</Button>
-      <Button type="warn" >primary</Button>
-      <Button >primary</Button>
-    </ButtonGroup>
-    <ButtonGroup inline>
-      <Button type="primary" >primary</Button>
-      <Button type="warn" >primary</Button>
-      <Button >primary</Button>
-      <Button type="primary" >primary</Button>
-      <Button type="warn" >primary</Button>
-      <Button>primary</Button>
-    </ButtonGroup>
+    <Button>default</Button>
+    <Button disabled>default disabled</Button>
+    <Button type="primary">
+      <i class='fab fa-github-square' slot="icon"></i>
+      primary</Button>
+    <Button type="primary" disabled>primary disabled</Button>
+    <Button type="warn">warning</Button>
+    <Button type="warn" disabled>warning disabled</Button>
+    <Button type="primary" outline>primary outline</Button>
+    <Button type="primary" outline disabled>primary outline disabled</Button>
+    <Button type="primary" loading>loading</Button>
+  </ButtonGroup>
+  <ButtonGroup inline>
+    <Button size="small">small</Button>
+    <Button type="warn" size="small">small</Button>
+    <Button type="primary" size="small" loading>small</Button>
+    <Button type="warn" size="small" outline>small outline</Button>
+    <Button type="primary" size="small" outline>small outline</Button>
+  </ButtonGroup>
+  <ButtonGroup inline>
+    <Button type="primary"><i class='fab fa-github-square' slot="icon"></i> primary</Button>
+    <Button type="warn" loading>primary</Button>
+    <Button type="primary" >primary</Button>
+    <Button type="warn" >warn</Button>
+    <Button>default</Button>
+  </ButtonGroup>
 
-    <ButtonGroup addons>
-      <Button type="primary" >primary</Button>
-      <Button type="warn" >primary</Button>
-      <Button type="primary">primary</Button>
-    </ButtonGroup>
-    <ButtonGroup sticky>
-      <Button type="primary" >primary</Button>
-      <Button type="warn" >primary</Button>
-    </ButtonGroup>
-    </div>
-
+  <ButtonGroup addons>
+    <Button type="primary" >primary</Button>
+    <Button type="warn" >primary</Button>
+    <Button type="primary">primary</Button>
+  </ButtonGroup>
+  <ButtonGroup sticky>
+    <Button type="primary" >primary</Button>
+    <Button type="warn" >primary</Button>
+  </ButtonGroup>
+  </div>
 </template>
 <script>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator'
 import { Button, ButtonGroup } from './index.js'
 
 @Component({
   components: {
     Button,
-    ButtonGroup
-  }
+    ButtonGroup,
+  },
 })
 export default class ButtonDemo extends Vue {}
 </script>

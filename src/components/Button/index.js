@@ -12,7 +12,7 @@ import './button.scss'
     icon: PropTypes.any,
     disabled: PropTypes.bool.def(false),
     inline: PropTypes.bool.def(false),
-    outlined: PropTypes.bool.def(false),
+    outline: PropTypes.bool.def(false),
     sticky: PropTypes.bool.def(false),
     loading: PropTypes.bool.def(false),
   },
@@ -23,7 +23,7 @@ class Button extends Vue {
       [this.prefixCls]: true,
       [`${this.prefixCls}-${this.size}`]: true,
       [`${this.prefixCls}-${this.type}`]: true,
-      [`${this.prefixCls}--outlined`]: this.outlined,
+      [`${this.prefixCls}--outline`]: this.outline,
       [`${this.prefixCls}--inline`]:
         this.inline || this.$parent.inline || this.$parent.addons,
       [`${this.prefixCls}--disabled`]: this.disabled,
@@ -55,7 +55,7 @@ class Button extends Vue {
         aria-disabled={this.disabled}
       >
         {this.iconRender}
-        {this.loading ? null : this.$slots.default}
+        {this.$slots.default}
       </a>
     )
   }
