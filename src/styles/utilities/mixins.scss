@@ -1,0 +1,107 @@
+@import '../base/index';
+@import 'animations';
+
+@mixin scale-hairline-common($color, $top, $right, $bottom, $left) {
+  position: absolute;
+  z-index: 1;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+
+  display: block;
+
+  content: '';
+
+  background-color: $color;
+}
+
+@mixin hairline($direction: 'all', $color: $border-color-base, $radius: 0) {
+  @if $direction == 'all' {
+    border: 1px solid $color;
+  } @else {
+    border-#{$direction}: 1px solid $color;
+  }
+
+  @if $direction== 'all' {
+    @media (min-resolution: 2dppx) {
+      position: relative;
+
+      border: none;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        box-sizing: border-box;
+        width: 200%;
+        height: 200%;
+
+        content: '';
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        pointer-events: none;
+
+        border: 1px solid $color;
+        border-radius: $radius * 2;
+      }
+    }
+  } @else {
+    @media (min-resolution: 2dppx) {
+      border-#{$direction}: none;
+      &:before {
+        width: 100%;
+        height: 1px;
+
+        transform: scaleY(0.5);
+        transform-origin: 50% 50%;
+
+        @include scale-hairline-common($color, 0, auto, auto, 0);
+        @media (min-resolution: 3dppx) {
+          transform: scaleY(0.33);
+        }
+      }
+    }
+  }
+}
+
+@mixin hairlineRemove($direction: 'all') {
+  @if $direction == 'all' {
+    border: 0;
+    &:before {
+      display: none !important;
+    }
+  } @else {
+    border-#{$direction}: 0;
+    &:before {
+      display: none !important;
+    }
+  }
+}
+@mixin loading() {
+  position: relative;
+
+  display: block;
+
+  width: 1em;
+  height: 1em;
+
+  content: '';
+  animation: spinAround 500ms infinite linear;
+
+  border: 2px solid $border-color-base;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: $radius-circle;
+}
+
+@mixin center($width, $height: 0) {
+  position: absolute;
+  @if $height != 0 {
+    top: calc(50% - (#{$height} / 2));
+    left: calc(50% - (#{$width} / 2));
+  } @else {
+    top: calc(50% - (#{$width} / 2));
+    left: calc(50% - (#{$width} / 2));
+  }
+}

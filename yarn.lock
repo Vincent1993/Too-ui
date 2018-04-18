@@ -202,6 +202,13 @@
     "@babel/helper-plugin-utils" "7.0.0-beta.44"
     "@babel/plugin-syntax-class-properties" "7.0.0-beta.44"
 
+"@babel/plugin-proposal-decorators@^7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.0.0-beta.44.tgz#287ba7d320f58b45e8fb7148b0d06fc6692c8c0d"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.44"
+    "@babel/plugin-syntax-decorators" "7.0.0-beta.44"
+
 "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.44.tgz#00ac9d8a28addd88599d356f098894ae3d8ec1de"
@@ -262,6 +269,12 @@
 "@babel/plugin-syntax-class-properties@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0-beta.44.tgz#1e4e67ef6d7101a3a7d2ae5f60e580cbf4b7750f"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.44"
+
+"@babel/plugin-syntax-decorators@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-decorators/-/plugin-syntax-decorators-7.0.0-beta.44.tgz#f56e4ce94d67e0189532305af32b9d2ac2902e65"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.44"
 
@@ -5290,6 +5303,10 @@ lodash.isfunction@^3.0.8:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
 
+lodash.isplainobject@4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+
 lodash.isstring@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
@@ -8446,6 +8463,12 @@ vue-template-compiler@^2.5.13:
 vue-template-es2015-compiler@^1.5.3, vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue-types@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/vue-types/-/vue-types-1.2.2.tgz#fc32401f69a881f1be81b648ba6cf5d37671a45f"
+  dependencies:
+    lodash.isplainobject "4.0.6"
 
 vue@^2.5.13:
   version "2.5.16"

@@ -1,0 +1,180 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+$hd: 1px;
+// button color
+$button-primary-color: $brand-primary;
+$button-disabled-color: $color-text-disabled;
+$button-text-default-color: $color-text-base-inverse;
+
+$primary-button-fill: $brand-primary;
+$primary-button-fill-tap: $brand-primary-tap;
+$warning-button-fill: #e94f4f;
+$warning-button-fill-tap: #d24747;
+// button typography
+$button-height: 47 * $hd;
+$button-font-size: 18 * $hd;
+$button-height-sm: 30 * $hd;
+$button-font-size-sm: 13 * $hd;
+$button-border-radius: 5 * $hd;
+
+$link-button-fill-tap: #ddd;
+$link-button-font-size: 16 * $hd;
+
+.#{$prefix-name}-button {
+  position: relative;
+
+  display: block;
+
+  box-sizing: border-box;
+  height: $button-height;
+  padding: 0;
+
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-word;
+
+  color: $color-text-base;
+  border-radius: $button-border-radius;
+  outline: none;
+  background-color: $fill-base;
+
+  font-size: $button-font-size;
+  line-height: $button-height;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  @include hairline('all', $fill-base, $button-border-radius);
+
+
+  &-small {
+    height: $button-height-sm;
+
+    font-size: $button-font-size-sm;
+    line-height: $button-height-sm;
+  }
+
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.5em;
+    height: 1.5em;
+
+    vertical-align: middle;
+  }
+  &--disabled {
+    opacity: 0.4;
+  }
+  &--inline {
+    padding: 0 $h-spacing-lg;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  &--loading {
+    &:after {
+      position: absolute !important;
+
+      @include center(1em);
+      @include loading;
+    }
+  }
+  &--sticky {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    border-radius: 0;
+  }
+}
+
+$typeMap: ('primary', $primary-button-fill), ('warn', $warning-button-fill);
+@each $name, $background in $typeMap {
+  .#{$prefix-name}-button-#{$name} {
+    color: $color-text-base-inverse;
+    background-color: $background;
+
+    @include hairline('all', $background, $button-border-radius);
+    &.#{$prefix-name}-button--disabled {
+      opacity: 0.4;
+      color: $color-text-base-inverse;
+    }
+    &.#{$prefix-name}-button--outlined {
+      color: $background;
+      background-color: transparent;
+    }
+  }
+}
+
+.button-group {
+  .#{$prefix-name}-button {
+    margin-bottom: 5px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &--inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  &--addons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .#{$prefix-name}-button {
+      margin-right: 0;
+
+      &:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: -1px;
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  &--sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    .#{$prefix-name}-button {
+      display: inline-block;
+
+      margin-bottom: 0;
+
+      border-radius: 0;
+      &:first-of-type {
+        left: 0;
+
+        width: 35%;
+      }
+
+      &:last-of-type {
+        right: 0;
+
+        width: 65%;
+      }
+    }
+  }
+}

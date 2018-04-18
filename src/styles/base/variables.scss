@@ -1,0 +1,69 @@
+$hd: 1px;
+$prefix-name: 'to';
+// Colors
+$brand-primary: #00d1b2;
+$brand-primary-tap: #00b89c;
+$brand-success: #6abf47;
+$brand-warning: #ffc600;
+$brand-error: #f4333c;
+$brand-important: #ff5b05;
+$brand-wait: #108ee9;
+
+$color-text-base: #000;
+$color-text-base-inverse: #fff;
+$color-text-secondary: #a4a9b0;
+$color-text-placeholder: #bbb;
+$color-text-disabled: #bbb;
+$color-text-caption: #888;
+$color-text-paragraph: #333;
+$color-link: $brand-primary;
+
+$fill-base: #fff;
+$fill-body: #f5f5f9;
+$fill-tap: #ddd;
+$fill-disabled: #ddd;
+$fill-mask: rgba(0, 0, 0, 0.4);
+$color-icon-base: #ccc;
+$fill-grey: #f7f7f7;
+
+$border-color-base: #ddd;
+
+// Typography
+
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+// Fontsize
+$font-size-icontext: 10 * $hd;
+$font-size-caption-sm: 12 * $hd;
+$font-size-base: 14 * $hd;
+$font-size-subhead: 15 * $hd;
+$font-size-caption: 16 * $hd;
+$font-size-heading: 17 * $hd;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+// Border
+
+$radius-xs: 2 * $hd;
+$radius-sm: 3 * $hd;
+$radius-md: 5 * $hd;
+$radius-lg: 7 * $hd;
+$radius-circle: 290486px;
+
+// Spacing
+
+$h-spacing-sm: 5 * $hd;
+$h-spacing-md: 8 * $hd;
+$h-spacing-lg: 15 * $hd;
+
+$v-spacing-xs: 3 * $hd;
+$v-spacing-sm: 6 * $hd;
+$v-spacing-md: 9 * $hd;
+$v-spacing-lg: 15 * $hd;
+$v-spacing-xl: 21 * $hd;
