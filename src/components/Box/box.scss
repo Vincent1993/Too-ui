@@ -1,0 +1,35 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+$box-color: $color-text-base;
+$box-background-color: $fill-base;
+$box-radius: $radius-md;
+$box-shadow: $shadow-base;
+$box-gutter: $h-spacing-md $v-spacing-md;
+
+.#{$prefix-name}-box {
+  display: block;
+
+  padding: $box-gutter;
+
+  color: $box-color;
+  border-radius: $box-radius;
+  background-color: $box-background-color;
+  box-shadow: $box-shadow;
+
+  @include block;
+
+  &--noBorder {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &--noGutter {
+    padding: 0;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+}

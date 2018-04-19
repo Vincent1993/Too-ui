@@ -105,3 +105,9 @@
     left: calc(50% - (#{$width} / 2));
   }
 }
+
+@mixin block() {
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
