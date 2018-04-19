@@ -70,6 +70,8 @@ $button-border-radius: 5 * $hd;
     vertical-align: middle;
   }
   &--disabled {
+    cursor: not-allowed;
+
     opacity: 0.6;
   }
   &--inline {
@@ -115,6 +117,8 @@ $typeMap: ('primary', $primary-button-fill, $primary-button-fill-tap),
       }
     }
     &.#{$prefix-name}-button--disabled {
+      cursor: not-allowed;
+
       opacity: 0.6;
       color: rgba($color-text-base-inverse, 0.6);
     }
