@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ButtonDemo from '../src/components/Button/demo.vue'
 import BoxDemo from './components/Box/demo.vue'
+import InputDemo from './components/Input/demo.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/elements/box',
       name: 'elements.box',
       component: BoxDemo,
+    },
+    {
+      path: '/elements/input',
+      name: 'elements.input',
+      component: InputDemo,
     },
   ],
 })

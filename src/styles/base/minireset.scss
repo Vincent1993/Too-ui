@@ -46,6 +46,9 @@ input,
 select,
 textarea {
     margin: 0;
+    &:focus {
+      outline: 0;
+    }
 }
 
 html {
@@ -73,11 +76,13 @@ iframe {
 
 table {
     border-spacing: 0;
+
     border-collapse: collapse;
 }
 
 td,
 th {
     padding: 0;
+
     text-align: left;
 }

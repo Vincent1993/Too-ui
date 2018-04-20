@@ -1,0 +1,82 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+$input-color: $color-text-base;
+$input-background-color: $fill-base;
+$input-active-border-color: $color-link;
+$input-invalid-border-color: $brand-error;
+$input-box-shadow-size: 0 0 0 0.125em;
+
+.#{$prefix-name}-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  min-height: 2.5em;
+  padding-top: calc(0.375em - 1px);
+  padding-right: calc(0.65em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.65em - 1px);
+
+  color: $input-color;
+  background-color: $input-background-color;
+
+  &-field {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+
+    &[data-title] {
+      &:before{
+        overflow: hidden;
+
+        width: 4em;
+        margin-right: 1em;
+        padding: .5em;
+
+        content: attr(data-title);
+        text-align: left;
+
+        font-size: $font-size-base;
+      }
+    }
+  }
+  &-input {
+    flex: 1;
+
+    font-size: $font-size-base;
+    line-height: 1.5;
+
+    @include hairlineRemove;
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+
+  &-append, &-prepend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-append {
+    flex: 0.1;
+  }
+  &-prepend {
+    padding: 0.25em;
+  }
+  &--active {
+    box-shadow: $input-box-shadow-size rgba($input-active-border-color, 0.25);
+
+    @include hairline(all, $input-active-border-color);
+  }
+
+  &--invalid {
+    box-shadow: $input-box-shadow-size rgba($input-invalid-border-color, 0.25);
+
+    @include hairline(all, $input-invalid-border-color);
+  }
+}
