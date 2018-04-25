@@ -2,12 +2,14 @@ import { Component, Vue, Prop, Watch, Emit } from 'vue-property-decorator'
 import className from 'classnames'
 import './input.scss'
 
-export interface InputProps extends HTMLInputElement {
-  class?: string
+interface HandleNameChangeInterface {
+  target: HTMLInputElement
 }
 
 type alignTextTypes = 'left' | 'center' | 'right'
-@Component
+@Component({
+  inheritAttrs: true,
+})
 export default class ToInput extends Vue {
   private focused: boolean = false
 
@@ -62,13 +64,13 @@ export default class ToInput extends Vue {
   @Prop({ default: 'left' })
   alignText!: alignTextTypes
 
-  get valid(): boolean {
+  private get valid(): boolean {
     return typeof this.validation === 'function'
       ? this.validation.call(this, this.value)
       : this.validation
   }
 
-  get inputAttributes(): object {
+  private get inputAttributes(): object {
     return {
       attrs: {
         for: this.id,
@@ -97,7 +99,6 @@ export default class ToInput extends Vue {
         min: this.min,
         max: this.max,
         type: this.type,
-        ...this.$attrs,
       },
     }
   }
@@ -123,26 +124,26 @@ export default class ToInput extends Vue {
   @Emit('clear')
   @Emit('input')
   handleClearClick(value: string): void {
-    this.$refs.input.focus()
+    (this.$refs.input as HTMLElement).focus()
   }
 
   render() {
     const prependRender =
       this.$slots.prepend || this.prependContent ? (
-        <div class={`${this.prefixCls}-prepend`}>
+        <div {...{ class: `${this.prefixCls}-prepend` }}>
           {this.$slots.prepend || this.prependContent}
         </div>
       ) : null
 
     const appendRender =
       this.$slots.append || this.appendContent || this.showClear ? (
-        <div class={`${this.prefixCls}-append`}>
+        <div {...{ class: `${this.prefixCls}-append` }}>
           {this.readonly ? null : (
             <div
-              class={`${this.prefixCls}-clear`}
+              {...{ class: `${this.prefixCls}-clear` }}
               onClick={() => this.handleClearClick('')}
             >
-              <i class="far fa-times-circle" />
+              <i {...{ class: `fa fa-times-circle` }} />
             </div>
           )}
 
@@ -153,15 +154,16 @@ export default class ToInput extends Vue {
     return (
       <label {...this.inputAttributes}>
         {prependRender}
-        <div class={`${this.prefixCls}-field`} data-title={this.title}>
+        <div {...{ class: `${this.prefixCls}-field` }} data-title={this.title}>
           <input
             {...this.inputFieldAttributes}
             value={this.value}
-            onInput={e => this.handleInput(e.target.value.trim())}
+            onInput={e => this.handleInput(e.currentTarget.value.trim())}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
           {this.disabled ? null : appendRender}
+          <transition />
         </div>
       </label>
     )
