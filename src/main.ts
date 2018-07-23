@@ -1,10 +1,13 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
+///  <reference path="../types/index.d.ts" />
+///  <reference path="./shims.d.ts"/>
 
-Vue.config.productionTip = false;
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+
+Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app')
