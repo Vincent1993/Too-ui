@@ -2,21 +2,24 @@
 @import '../../styles/utilities/mixins';
 
 // button color
+$button-default-color: $color-text-base;
 $button-primary-color: $brand-primary;
 $button-disabled-color: $color-text-disabled;
 $button-text-default-color: $color-text-base-inverse;
 
+$default-button-fill: $fill-base;
+$default-button-fill-tap: darken($fill-base, 10%);
 $primary-button-fill: $brand-primary;
 $primary-button-fill-tap: $brand-primary-tap;
 $warning-button-fill: #e94f4f;
 $warning-button-fill-tap: #d24747;
+
 // button typography
 $button-height: 47 * $hd;
 $button-font-size: 18 * $hd;
 $button-height-sm: 30 * $hd;
 $button-font-size-sm: 13 * $hd;
 $button-border-radius: 5 * $hd;
-
 
 .#{$prefix-name}-button {
   position: relative;
@@ -69,19 +72,19 @@ $button-border-radius: 5 * $hd;
 
     vertical-align: middle;
   }
-  &--disabled {
+  &.disabled {
     cursor: not-allowed;
 
     opacity: 0.6;
   }
-  &--inline {
+  &.inline {
     padding: 0 $h-spacing-lg;
 
     &:not(:last-child) {
       margin-right: 5px;
     }
   }
-  &--loading {
+  &.loading {
     &.#{$prefix-name}-button {
       color: transparent !important;
     }
@@ -92,7 +95,7 @@ $button-border-radius: 5 * $hd;
       @include loading;
     }
   }
-  &--sticky {
+  &.sticky {
     position: fixed !important;
     bottom: 0;
     left: 0;
@@ -103,27 +106,46 @@ $button-border-radius: 5 * $hd;
   }
 }
 
-$typeMap: ('primary', $primary-button-fill, $primary-button-fill-tap),
-  ('warn', $warning-button-fill, $warning-button-fill-tap);
-@each $name, $background, $backgroundTap in $typeMap {
+$typeMap: (
+    'default',
+    $default-button-fill,
+    $default-button-fill-tap,
+    $color-text-base
+  ),
+  (
+    'primary',
+    $primary-button-fill,
+    $primary-button-fill-tap,
+    $primary-button-fill
+  ),
+  ('warn', $warning-button-fill, $warning-button-fill-tap, $primary-button-fill);
+@each $name, $background, $backgroundTap, $color in $typeMap {
   .#{$prefix-name}-button-#{$name} {
-    color: $color-text-base-inverse;
     background-color: $background;
 
     @include hairline('all', $background, $button-border-radius);
+    @if $name == 'default' {
+      color: $color-text-base;
+    } @else {
+      color: $color-text-base-inverse;
+    }
     &:active {
       &:not([aria-disabled='true']) {
         background-color: $backgroundTap;
       }
     }
-    &.#{$prefix-name}-button--disabled {
+    &.disabled {
       cursor: not-allowed;
 
       opacity: 0.6;
-      color: rgba($color-text-base-inverse, 0.6);
+      @if $name == 'default' {
+        color: rgba($color-text-base, 0.6);
+      } @else {
+        color: rgba($color-text-base-inverse, 0.6);
+      }
     }
-    &.#{$prefix-name}-button--outline {
-      color: $background;
+    &.outline {
+      color: $color;
       background-color: transparent;
       &:active {
         &:not([aria-disabled='true']) {
@@ -143,14 +165,14 @@ $typeMap: ('primary', $primary-button-fill, $primary-button-fill-tap),
     margin-bottom: 10px;
   }
 
-  &--inline {
+  &.inline {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
   }
 
-  &--addons {
+  &.addons {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -172,12 +194,13 @@ $typeMap: ('primary', $primary-button-fill, $primary-button-fill-tap),
     }
   }
 
-  &--sticky {
+  &.sticky {
     position: fixed;
     bottom: 0;
     left: 0;
 
     width: 100%;
+
     .#{$prefix-name}-button {
       display: inline-block;
 

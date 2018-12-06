@@ -2,7 +2,7 @@ $hd: 1px;
 $prefix-name: 'to';
 // Colors
 $brand-primary: #00d1b2;
-$brand-primary-tap: #00b89c;
+$brand-primary-tap: darken($brand-primary, 10%);
 $brand-success: #6abf47;
 $brand-warning: #ffc600;
 $brand-error: #f4333c;
@@ -30,7 +30,9 @@ $border-color-base: #ddd;
 
 // Typography
 
-$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
 $family-monospace: monospace !default;
 $render-mode: optimizeLegibility !default;
 
@@ -69,4 +71,4 @@ $v-spacing-lg: 15 * $hd;
 $v-spacing-xl: 21 * $hd;
 
 // Shadow
-$shadow-base: 0 2px 3px rgba(#000, 0.1),0 0 0 1px rgba(#000, 0.1);
+$shadow-base: 0 2px 3px rgba(#000, 0.1), 0 0 0 1px rgba(#000, 0.1);
