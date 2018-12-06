@@ -1,16 +1,14 @@
 @import '../../styles/base/index';
 @import '../../styles/utilities/mixins';
+@import '../../styles/utilities/helpers';
 
 $box-color: $color-text-base;
 $box-background-color: $fill-base;
 $box-radius: $radius-md;
 $box-shadow: $shadow-base;
-$box-gutter: $h-spacing-md $v-spacing-md;
 
 .#{$prefix-name}-box {
   display: block;
-
-  padding: $box-gutter;
 
   color: $box-color;
   border-radius: $box-radius;
@@ -19,17 +17,17 @@ $box-gutter: $h-spacing-md $v-spacing-md;
 
   @include block;
 
-  &--noBorder {
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+  &.noBorder {
+    @include borderless;
+    @include radiusless;
+    @include shadowless;
   }
 
-  &--noGutter {
-    padding: 0;
+  &.noGutter {
+    @include paddingless;
   }
 
-  &--fullWidth {
+  &.fullWidth {
     width: 100%;
   }
 }

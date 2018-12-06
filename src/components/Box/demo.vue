@@ -1,30 +1,33 @@
 <template>
   <div class="demo-container">
     <Box>
-        default
+      default
     </Box>
-    <Box>
-        fullWidth
+    <Box fullWidth>
+      fullWidth
+    </Box>
+    <Box fullHeight>
+      <div>fullHeight</div>
     </Box>
     <Box noGutter>
-        noGutter
+      noGutter
     </Box>
     <Box noBorder>
-        noBorder
+      noBorder
     </Box>
     <Box boxColor="#ddd">
-        custom background
+      custom background
     </Box>
   </div>
 </template>
 <script>
-import { Component, Vue } from 'vue-property-decorator'
-import Box from './index'
+import { Component, Vue } from "vue-property-decorator";
+import Box from "./index";
 
 @Component({
   components: {
-   Box
-  },
+    Box
+  }
 })
 export default class BoxDemo extends Vue {}
 </script>
