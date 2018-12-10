@@ -1,8 +1,8 @@
 {
-  "name": "@wangjs/too",
+  "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/too.umd.min.js",
   "scripts": {
