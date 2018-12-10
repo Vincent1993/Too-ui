@@ -44,6 +44,7 @@
 
         border: 1px solid $color;
         border-radius: $radius * 2;
+        @content;
       }
     }
   } @else {
@@ -57,6 +58,7 @@
         transform-origin: 50% 50%;
 
         @include scale-hairline-common($color, 0, auto, auto, 0);
+        @content;
         @media (min-resolution: 3dppx) {
           transform: scaleY(0.33);
         }

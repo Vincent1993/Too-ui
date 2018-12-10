@@ -1,0 +1,19 @@
+@mixin paddingless {
+  padding: 0 !important;
+}
+
+@mixin marginless {
+  margin: 0 !important;
+}
+
+@mixin radiusless {
+  border-radius: 0 !important;
+}
+
+@mixin shadowless {
+  box-shadow: none !important;
+}
+
+@mixin borderless {
+  border: 0 !important;
+}

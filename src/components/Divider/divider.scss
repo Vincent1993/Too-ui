@@ -1,0 +1,26 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+.#{$prefix-name}-divider {
+  position: relative;
+
+  width: 80%;
+  margin: 1em auto;
+
+  &__inner {
+    padding: 0 0.5em;
+
+    vertical-align: middle;
+    &.line {
+      @include hairline('bottom') {
+        z-index: -1;
+        top: 50%;
+
+        margin: 0 auto;
+      }
+      .#{$prefix-name}-divider__inner {
+        z-index: 2;
+      }
+    }
+  }
+}
