@@ -2,20 +2,24 @@
   "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "main": "lib/too-ui.umd.min.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib --name too ./src/components/index.js",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "lint": "vue-cli-service lint",
-    "build:component": "node ./bin/build.js",
+    "clean": "rimraf lib",
+    "build:component": "yarn clean && node ./bin/build.js",
     "e2e:open": "vue-cli-service e2e:open"
   },
   "dependencies": {
-    "@toojs/too-ui": "^0.2.4",
+    "@toojs/too-ui": "^0.2.5",
     "@types/classnames": "^2.2.3",
     "@types/react": "^16.3.11",
     "classnames": "^2.2.5",
@@ -42,7 +46,9 @@
     "babel-core": "^7.0.0-0",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "lodash": "^4.17.11",
     "node-sass": "4.7.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "6.0.6",
     "shelljs": "^0.8.3",
     "typescript": "^2.8.1",
