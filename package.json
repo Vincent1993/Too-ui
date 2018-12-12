@@ -2,7 +2,7 @@
   "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "license": "MIT",
   "main": "lib/too-ui.common.js",
   "files": [
@@ -23,7 +23,7 @@
     "@types/classnames": "^2.2.3",
     "@types/react": "^16.3.11",
     "classnames": "^2.2.5",
-    "vue": "^2.5.13",
+    "vue": "2.5.16",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
@@ -52,7 +52,7 @@
     "sass-loader": "6.0.6",
     "shelljs": "^0.8.3",
     "typescript": "^2.8.1",
-    "vue-template-compiler": "^2.5.13",
+    "vue-template-compiler": "2.5.16",
     "vue-types": "^1.2.2"
   },
   "babel": {
