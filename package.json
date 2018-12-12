@@ -2,9 +2,9 @@
   "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
-  "main": "lib/too-ui.umd.min.js",
+  "main": "lib/too-ui.common.js",
   "files": [
     "lib"
   ],
@@ -47,7 +47,7 @@
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "lodash": "^4.17.11",
-    "node-sass": "4.7.2",
+    "node-sass": "4.5.3",
     "rimraf": "^2.6.2",
     "sass-loader": "6.0.6",
     "shelljs": "^0.8.3",
