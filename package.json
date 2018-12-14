@@ -2,11 +2,13 @@
   "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "license": "MIT",
   "main": "lib/too-ui.common.js",
+  "typings": "types/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "scripts": {
     "serve": "vue-cli-service serve --open",
