@@ -84,12 +84,7 @@ $button-border-radius: 5 * $hd;
       margin-right: 5px;
     }
   }
-  &.round {
-    @include hairline('all', $fill-base, $radius-round);
-    &.#{$prefix-name}-button {
-      border-radius: $radius-round !important;
-    }
-  }
+
   &.loading {
     &.#{$prefix-name}-button {
       color: transparent !important;
@@ -129,15 +124,33 @@ $typeMap: (
   .#{$prefix-name}-button-#{$name} {
     background-color: $background;
 
-    @include hairline('all', $background, $button-border-radius);
     @if $name == 'default' {
       color: $color-text-base;
+
+      @include hairline('all', $border-color-base, $button-border-radius);
     } @else {
       color: $color-text-base-inverse;
+
+      @include hairline('all', $background, $button-border-radius);
     }
     &:active {
       &:not([aria-disabled='true']) {
         background-color: $backgroundTap;
+      }
+    }
+    &.round {
+      @if $name == 'default' {
+        color: $color-text-base;
+
+        @include hairline('all', $border-color-base, $radius-round);
+      } @else {
+        color: $color-text-base-inverse;
+
+        @include hairline('all', $fill-base, $radius-round);
+      }
+
+      &.#{$prefix-name}-button {
+        border-radius: $radius-round !important;
       }
     }
     &.disabled {
