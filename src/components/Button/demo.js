@@ -26,6 +26,15 @@ export default class ButtonDemo extends Vue {
             primary disabled
           </Button>
         </Button.Group>
+        <Button.Group>
+          <Button outline>default outline</Button>
+          <Button type="primary" outline>
+            primary outline
+          </Button>
+          <Button type="warn" outline>
+            warn outline
+          </Button>
+        </Button.Group>
         <Button.Group inline>
           <Button>default inline</Button>
           <Button type="primary">primary inline</Button>

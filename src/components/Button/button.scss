@@ -25,6 +25,7 @@ $button-border-radius: 5 * $hd;
   position: relative;
 
   display: block;
+  overflow: hidden;
 
   box-sizing: border-box;
   height: $button-height;
@@ -119,7 +120,7 @@ $typeMap: (
     $primary-button-fill-tap,
     $primary-button-fill
   ),
-  ('warn', $warning-button-fill, $warning-button-fill-tap, $primary-button-fill);
+  ('warn', $warning-button-fill, $warning-button-fill-tap, $warning-button-fill);
 @each $name, $background, $backgroundTap, $color in $typeMap {
   .#{$prefix-name}-button-#{$name} {
     background-color: $background;
