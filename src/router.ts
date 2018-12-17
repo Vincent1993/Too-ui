@@ -1,33 +1,39 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import ButtonDemo from '../src/components/Button/demo.vue'
-import BoxDemo from './components/Box/demo.vue'
-import InputDemo from './components/Input/demo.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import ButtonDemo from '../src/components/Button/demo.js';
+import BoxDemo from './components/Box/demo.vue';
+import ModalDemo from './components/Modal/demo.vue';
+import DividerDemo from './components/Divider/demo.vue';
+import CellItemDemo from './components/CellItem/demo.js';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
       path: '/elements/button',
       name: 'elements.button',
-      component: ButtonDemo,
+      component: ButtonDemo
     },
     {
       path: '/elements/box',
       name: 'elements.box',
-      component: BoxDemo,
+      component: BoxDemo
     },
     {
-      path: '/elements/input',
-      name: 'elements.input',
-      component: InputDemo,
+      path: '/elements/modal',
+      name: 'elements.modal',
+      component: ModalDemo
     },
-  ],
-})
+    {
+      path: '/elements/divider',
+      name: 'element.divider',
+      component: DividerDemo
+    },
+    {
+      path: '/elements/cell-item',
+      name: 'element.cell.item',
+      component: CellItemDemo
+    }
+  ]
+});
