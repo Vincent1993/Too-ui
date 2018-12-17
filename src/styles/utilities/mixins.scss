@@ -112,3 +112,31 @@
     margin-bottom: 1.5rem;
   }
 }
+
+@mixin wordBreak() {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@mixin txtOverflow($num: 1, $lineHeight: 20) {
+  @if $num == 1 {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+
+    max-height: $lineHeight * $num + px;
+
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    line-height: $lineHeight + px;
+
+    -webkit-line-clamp: $num;
+  }
+}

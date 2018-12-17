@@ -3,8 +3,12 @@
     <Didiver>children</Didiver>
     <Didiver type="line">children</Didiver>
     <Didiver type="dot">children</Didiver>
+    <Didiver type="loading">loading divider</Didiver>
     <Didiver text="text" />
-    <Didiver text="`<div>html text</div>" />
+    <Didiver text="text">overload overloadoverloadoverloadoverloadoverloadoverloadoverloadoverloadoverload</Didiver>
+    <Didiver>
+      <div>121212<span>23232</span></div>
+    </Didiver>
   </div>
 </template>
 <script>

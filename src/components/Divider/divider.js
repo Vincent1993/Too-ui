@@ -6,7 +6,7 @@ import classNames from 'classnames';
   props: {
     prefixCls: PropTypes.string.def('to-divider'),
     text: PropTypes.string,
-    type: PropTypes.oneOf(['line', 'dot', 'none']).def('none'),
+    type: PropTypes.oneOf(['line', 'dot', 'none', 'loading']).def('none'),
     textBackground: PropTypes.string.def('#F5F5F9')
   },
   functional: true
@@ -14,13 +14,18 @@ import classNames from 'classnames';
 export default class Divider extends Vue {
   render(createElement, context) {
     return (
-      <div class={context.props.prefixCls}>
+      <div
+        class={{
+          [context.props.prefixCls]: true,
+          [context.props.type]: context.props.type !== 'loading'
+        }}
+      >
+        {context.props.type === 'loading' ? <span class="loading" /> : null}
         {createElement(
           'span',
           {
             staticClass: classNames({
-              [`${context.props.prefixCls}__inner`]: true,
-              [context.props.type]: context.props.type !== 'none'
+              [`${context.props.prefixCls}__inner`]: true
             }),
             style: {
               background: context.props.textBackground

@@ -4,23 +4,47 @@
 .#{$prefix-name}-divider {
   position: relative;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 80%;
   margin: 1em auto;
+  &.line {
+    @include hairline('bottom') {
+      z-index: -1;
+      top: 50%;
 
+      margin: 0 auto;
+    }
+    .#{$prefix-name}-divider__inner {
+      z-index: 2;
+    }
+  }
+
+  &.dot {
+    &:before,
+    &:after {
+      content: '·';
+    }
+
+    &:before {
+      margin-right: 10%;
+    }
+    &:after {
+      margin-left: 10%;
+    }
+  }
   &__inner {
+    position: relative;
+
+    overflow: hidden;
+
     padding: 0 0.5em;
 
-    vertical-align: middle;
-    &.line {
-      @include hairline('bottom') {
-        z-index: -1;
-        top: 50%;
-
-        margin: 0 auto;
-      }
-      .#{$prefix-name}-divider__inner {
-        z-index: 2;
-      }
-    }
+    @include txtOverflow;
+  }
+  .loading {
+    @include loading;
   }
 }
