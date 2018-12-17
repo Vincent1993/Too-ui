@@ -84,6 +84,12 @@ $button-border-radius: 5 * $hd;
       margin-right: 5px;
     }
   }
+  &.round {
+    @include hairline('all', $fill-base, $radius-round);
+    &.#{$prefix-name}-button {
+      border-radius: $radius-round !important;
+    }
+  }
   &.loading {
     &.#{$prefix-name}-button {
       color: transparent !important;
@@ -202,22 +208,11 @@ $typeMap: (
     width: 100%;
 
     .#{$prefix-name}-button {
-      display: inline-block;
+      display: block;
 
       margin-bottom: 0;
 
       border-radius: 0;
-      &:first-of-type {
-        left: 0;
-
-        width: 35%;
-      }
-
-      &:last-of-type {
-        right: 0;
-
-        width: 65%;
-      }
     }
   }
 }

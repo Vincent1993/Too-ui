@@ -4,9 +4,7 @@ import './button.scss';
 
 @Component({
   props: {
-    type: PropTypes.oneOf(['primary', 'warn', 'danger', 'default']).def(
-      'default'
-    ),
+    type: PropTypes.oneOf(['primary', 'warn', 'default']).def('default'),
     prefixCls: PropTypes.string.def('to-button'),
     size: PropTypes.oneOf(['small', 'default']).def('default'),
     icon: PropTypes.any,
@@ -14,6 +12,7 @@ import './button.scss';
     inline: PropTypes.bool.def(false),
     outline: PropTypes.bool.def(false),
     sticky: PropTypes.bool.def(false),
+    round: PropTypes.bool.def(false),
     loading: PropTypes.bool.def(false)
   }
 })
@@ -27,6 +26,7 @@ class Button extends Vue {
       inline: this.inline || this.$parent.inline || this.$parent.addons,
       disabled: this.disabled,
       sticky: this.sticky,
+      round: this.round,
       loading: this.loading
     };
   }

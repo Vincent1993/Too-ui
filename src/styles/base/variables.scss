@@ -1,7 +1,7 @@
 $hd: 1px;
 $prefix-name: 'to';
 // Colors
-$brand-primary: #00d1b2;
+$brand-primary: #09bb07;
 $brand-primary-tap: darken($brand-primary, 10%);
 $brand-success: #6abf47;
 $brand-warning: #ffc600;
@@ -56,6 +56,7 @@ $radius-xs: 2 * $hd;
 $radius-sm: 3 * $hd;
 $radius-md: 5 * $hd;
 $radius-lg: 7 * $hd;
+$radius-round: 100px;
 $radius-circle: 290486px;
 
 // Spacing
