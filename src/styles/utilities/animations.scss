@@ -8,18 +8,16 @@
 }
 
 @mixin effect() {
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-out;
 
   animation-fill-mode: both;
 }
 
-
 $animateMap: (
   zoom: 'zoom',
-  fadeIn: 'fade-in',
-  fadeOut: 'fade-out',
-  slideUp:'slide-up',
+  fade: 'fade',
+  slideUp: 'slide-up',
   slideDown: 'slide-down',
   slideRight: 'slide-right',
   slideLeft: 'slide-left'
@@ -43,7 +41,6 @@ $animateMap: (
     @include effect();
   }
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -80,14 +77,14 @@ $animateMap: (
   }
 }
 @keyframes slideDownIn {
-    0% {
-      transform: translate(0, -100%);
-    }
-
-    100% {
-      transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, -100%);
   }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
 @keyframes slideDownOut {
   0% {
     transform: translate(0, 0);
@@ -101,11 +98,11 @@ $animateMap: (
   0% {
     visibility: visible;
 
-    transform: translate(-100%,0);
+    transform: translate(-100%, 0);
   }
 
   to {
-    transform: translate(0, 0)
+    transform: translate(0, 0);
   }
 }
 @keyframes slideLeftOut {
@@ -116,18 +113,18 @@ $animateMap: (
   to {
     visibility: hidden;
 
-    transform: translate(-100%, 0)
+    transform: translate(-100%, 0);
   }
 }
 @keyframes slideRightIn {
   0% {
     visibility: visible;
 
-    transform: translate(100%,0);
+    transform: translate(100%, 0);
   }
 
   to {
-    transform: translate(0, 0)
+    transform: translate(0, 0);
   }
 }
 @keyframes slideRightOut {
@@ -138,7 +135,7 @@ $animateMap: (
   to {
     visibility: hidden;
 
-    transform: translate(100%, 0)
+    transform: translate(100%, 0);
   }
 }
 @keyframes zoomIn {
