@@ -2,3 +2,7 @@
 
 @import 'minireset.scss';
 @import 'variables.scss';
+
+* {
+  font-family: $family-sans-serif;
+}
