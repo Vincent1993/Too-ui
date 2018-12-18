@@ -1,0 +1,39 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+@import '../../styles/utilities/helpers.scss';
+
+$toast-z: 200;
+$toast-content-z: $toast-z + 10;
+$toast-content-background: rgba(58, 58, 58, 0.9);
+$toast-border-radius: $radius-sm;
+
+.#{$prefix-name}-toast {
+  &.top {
+    .#{$prefix-name}-modal-content {
+      width: 100%;
+
+      @include radiusless;
+    }
+  }
+  &.bottom {
+    .#{$prefix-name}-modal-content {
+      bottom: 5%;
+    }
+  }
+  &-icon {
+    margin-right: $h-spacing-sm;
+  }
+  .#{$prefix-name}-modal {
+    &-content {
+      width: auto;
+      min-width: 80px;
+      max-width: 100%;
+      height: auto;
+      padding: $v-spacing-md $h-spacing-lg;
+
+      color: $color-text-base-inverse;
+      border-radius: $toast-border-radius;
+      background-color: $toast-content-background;
+    }
+  }
+}
