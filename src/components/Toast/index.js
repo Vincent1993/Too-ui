@@ -6,6 +6,7 @@ const Toast = ({
   parentNode = document.body,
   prefixCls = 'to-toast',
   destroyOnClose = false,
+  transparent = true,
   ...restOptions
 }) => {
   let vm = Toast._instance;
@@ -17,6 +18,7 @@ const Toast = ({
       propsData: {
         prefixCls,
         destroyOnClose,
+        transparent,
         ...restOptions
       }
     }).$mount();
@@ -43,7 +45,7 @@ Toast.hide = () => {
   }
 };
 
-Toast.info = (content = '', duration = 3000, transparent = false) => {
+Toast.info = (content = '', duration = 3000, transparent = true) => {
   return Toast({
     icon: '',
     content,
@@ -52,7 +54,7 @@ Toast.info = (content = '', duration = 3000, transparent = false) => {
   });
 };
 
-Toast.succeed = (content = '', duration = 3000, transparent = false) => {
+Toast.succeed = (content = '', duration = 3000, transparent = true) => {
   return Toast({
     icon: 'check-circle',
     content,
@@ -61,7 +63,7 @@ Toast.succeed = (content = '', duration = 3000, transparent = false) => {
   });
 };
 
-Toast.fail = (content = '', duration = 3000, transparent = false) => {
+Toast.fail = (content = '', duration = 3000, transparent = true) => {
   return Toast({
     icon: 'times-circle',
     content,
@@ -70,7 +72,7 @@ Toast.fail = (content = '', duration = 3000, transparent = false) => {
   });
 };
 
-Toast.loading = (content = '', duration = 3000, transparent = false) => {
+Toast.loading = (content = '', duration = 3000, transparent = true) => {
   return Toast({
     icon: 'spinner',
     animate: 'spin',
@@ -79,5 +81,6 @@ Toast.loading = (content = '', duration = 3000, transparent = false) => {
     transparent
   });
 };
+
 export { Toast };
 export default Toast;

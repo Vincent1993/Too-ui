@@ -1,12 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Button from '../Button/';
-import Toast from './index';
+import Toast from './toast';
 
 @Component
 export default class ToastDemo extends Vue {
-  showToast(options) {
-    Toast.loading(options);
-  }
   render() {
     return (
       <div class="demo-container">
@@ -14,7 +11,7 @@ export default class ToastDemo extends Vue {
           <Button
             type="primary"
             onClick={() =>
-              this.showToast({
+              Toast({
                 icon: 'spinner',
                 position: 'top',
                 content: '这是一条通知'
@@ -25,20 +22,17 @@ export default class ToastDemo extends Vue {
           </Button>
           <Button
             type="primary"
-            onClick={() => this.showToast('这是一条通知222')}
-          >
-            bottom
-          </Button>
-          <Button
-            type="primary"
             onClick={() =>
-              this.showToast({
-                position: 'center',
-                content: '这是一条通知'
-              })
+              Toast.loading(
+                <div>
+                  这是一条通知222<Button type="primary" size="small">
+                    botto
+                  </Button>
+                </div>
+              )
             }
           >
-            default
+            bottom
           </Button>
         </Button.Group>
       </div>

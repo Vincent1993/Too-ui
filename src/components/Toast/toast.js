@@ -2,14 +2,14 @@ import { Component } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
 import classNames from 'classnames';
 import Modal from '../Modal/';
-import CustomFontAwesomeIcon from '../Icon/FontAwesomeIcon';
+import { FontAwesomeIcon } from '../Icon/';
 
 @Component({
   props: {
-    duration: PropTypes.integer.def(0),
+    duration: PropTypes.integer.def(3000),
     icon: PropTypes.string.def(''),
     content: PropTypes.oneOfType([String, Object]),
-    hasMask: PropTypes.bool.def(false),
+    transparent: PropTypes.bool.def(true),
     onClose: PropTypes.func.def(() => {}),
     uid: PropTypes.number.def(Date.now()),
     animate: PropTypes.oneOf(['spin', 'pulse'])
@@ -55,7 +55,7 @@ export default class Toast extends Modal {
           ref="modal"
           visible={this.toastVisible}
           onHide={this.handleModalHide}
-          transparent={!this.hasMask}
+          transparent={this.transparent}
           closable={false}
           maskClosable={false}
           destroyOnClose
@@ -64,7 +64,7 @@ export default class Toast extends Modal {
         >
           {this.icon ? (
             <span class={`${this.prefixCls}-icon`}>
-              <CustomFontAwesomeIcon icon={this.icon} animate={this.animate} />
+              <FontAwesomeIcon icon={this.icon} animate={this.animate} />
             </span>
           ) : null}
           <div class={`${this.prefixCls}-text`}>{this.content}</div>
