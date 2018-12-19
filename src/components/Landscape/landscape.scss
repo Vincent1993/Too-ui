@@ -1,0 +1,44 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+$landscape-z: 20 + 2;
+
+.#{$prefix-name}-landscape {
+  .#{$prefix-name}-modal-content {
+    overflow: inherit;
+
+    height: auto;
+
+    background: transparent;
+  }
+  &-body {
+    position: relative;
+  }
+  &-content {
+    padding: $v-spacing-md $h-spacing-md;
+  }
+  &-close {
+    display: block;
+
+    text-align: center;
+
+    color: $fill-base;
+    &.dark {
+      color: $fill-black;
+    }
+    &.bottom {
+      margin-top: 20px;
+    }
+    &.top-right,
+    &.top-left {
+      position: absolute;
+      top: -30px;
+    }
+    &.top-right {
+      right: 0;
+    }
+    &.top-left {
+      left: 0;
+    }
+  }
+}
