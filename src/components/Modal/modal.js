@@ -83,6 +83,7 @@ export default class Modal extends Vue {
   }
   afterModalContentClose() {
     this.$emit('update:visible', false);
+    this.$emit('input', false);
     this.$emit('hide');
 
     this.modalShow = false;

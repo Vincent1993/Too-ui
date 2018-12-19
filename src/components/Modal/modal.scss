@@ -16,7 +16,6 @@ $modal-content-spacing: 2 * $modal-content-margin !default;
   left: 0;
 
   display: flex;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
 
   height: 100%;
@@ -38,14 +37,12 @@ $modal-content-spacing: 2 * $modal-content-margin !default;
     justify-content: center;
   }
 
-
-
   &-content {
     position: absolute;
     z-index: $modal-content-z;
 
     display: flex;
-    overflow: auto;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 
@@ -63,7 +60,6 @@ $modal-content-spacing: 2 * $modal-content-margin !default;
     }
   }
 
-
   &--right,
   &--left {
     .#{$prefix-name}-modal-content {
@@ -76,24 +72,23 @@ $modal-content-spacing: 2 * $modal-content-margin !default;
   }
   &--top {
     .#{$prefix-name}-modal-content {
-      top:0;
+      top: 0;
     }
   }
   &--bottom {
     .#{$prefix-name}-modal-content {
-     bottom: 0;
+      bottom: 0;
     }
   }
 
-
   &--left {
     .#{$prefix-name}-modal-content {
-     right: 0;
+      right: 0;
     }
   }
   &--right {
     .#{$prefix-name}-modal-content {
-     left: 0;
+      left: 0;
     }
   }
 
