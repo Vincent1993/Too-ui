@@ -1,0 +1,73 @@
+@import '../../styles/base/index';
+@import '../../styles/utilities/mixins';
+
+$dialog-z: 20 + 4;
+$dialog-width: 80vw;
+$dialog-padding: $v-spacing-lg * 2 $h-spacing-lg * 2;
+
+.#{$prefix-name}-dialog {
+  .#{$prefix-name}-modal-content {
+    width: auto;
+    height: auto;
+
+    border-radius: $radius-md;
+  }
+  &-content {
+    width: $dialog-width;
+  }
+  &-body {
+    padding: $dialog-padding;
+
+    text-align: center;
+  }
+  &-title {
+    margin-bottom: $v-spacing-lg;
+
+    color: $fill-black;
+
+    font-size: $font-size-heading;
+  }
+  &-text {
+    display: flex;
+    justify-content: center;
+
+    font-size: $font-size-base;
+  }
+  &-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    color: $color-text-secondary;
+  }
+  &-icon {
+    position: relative;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+    margin: $v-spacing-md auto $h-spacing-md;
+    .fa-check {
+      color: $brand-success;
+    }
+    .fa-times-circle {
+      color: $brand-error;
+    }
+  }
+  &-footer {
+    position: relative;
+
+    @include hairline('top');
+    .#{$prefix-name}-button {
+      margin-bottom: 0;
+
+      @include hairlineRemove;
+      @include hairline('right');
+
+      &:last-child {
+        @include hairlineRemove('right');
+      }
+    }
+  }
+}
