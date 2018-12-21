@@ -10,6 +10,7 @@ export default class ButtonDemo extends Vue {
           <Button>default</Button>
           <Button type="primary">primary</Button>
           <Button type="warn">warn</Button>
+          <Button type="error">error</Button>
         </Button.Group>
         <Button.Group>
           <Button round>default round</Button>
@@ -18,6 +19,9 @@ export default class ButtonDemo extends Vue {
           </Button>
           <Button round type="warn">
             warn
+          </Button>
+          <Button round type="error">
+            error
           </Button>
         </Button.Group>
         <Button.Group>
@@ -34,6 +38,9 @@ export default class ButtonDemo extends Vue {
           <Button type="warn" outline>
             warn outline
           </Button>
+          <Button type="error" outline>
+            error outline
+          </Button>
         </Button.Group>
         <Button.Group inline>
           <Button>default inline</Button>
@@ -46,6 +53,9 @@ export default class ButtonDemo extends Vue {
             inline small
           </Button>
           <Button type="warn" size="small">
+            inline small
+          </Button>
+          <Button type="error" size="small">
             inline small
           </Button>
         </Button.Group>

@@ -8,11 +8,13 @@ $button-disabled-color: $color-text-disabled;
 $button-text-default-color: $color-text-base-inverse;
 
 $default-button-fill: $fill-base;
-$default-button-fill-tap: darken($fill-base, 10%);
+$default-button-fill-tap: rgba(0, 0, 0, 0.1);
 $primary-button-fill: $brand-primary;
-$primary-button-fill-tap: $brand-primary-tap;
-$warning-button-fill: #e94f4f;
-$warning-button-fill-tap: #d24747;
+$primary-button-fill-tap: #f1fff1;
+$error-button-fill: $brand-error;
+$error-button-fill-tap: #fac3c6;
+$warning-button-fill: $brand-warning;
+$warning-button-fill-tap: $brand-warning;
 
 // button typography
 $button-height: 47 * $hd;
@@ -106,6 +108,9 @@ $button-border-radius: 5 * $hd;
 
     border-radius: 0;
   }
+  &.block {
+    width: 100%;
+  }
 }
 
 $typeMap: (
@@ -120,7 +125,8 @@ $typeMap: (
     $primary-button-fill-tap,
     $primary-button-fill
   ),
-  ('warn', $warning-button-fill, $warning-button-fill-tap, $warning-button-fill);
+  ('warn', $warning-button-fill, $warning-button-fill-tap, $warning-button-fill),
+  ('error', $error-button-fill, $error-button-fill-tap, $error-button-fill);
 @each $name, $background, $backgroundTap, $color in $typeMap {
   .#{$prefix-name}-button-#{$name} {
     background-color: $background;
@@ -134,11 +140,7 @@ $typeMap: (
 
       @include hairline('all', $background, $button-border-radius);
     }
-    &:active {
-      &:not([aria-disabled='true']) {
-        background-color: $backgroundTap;
-      }
-    }
+
     &.round {
       @if $name == 'default' {
         color: $color-text-base;
@@ -154,6 +156,23 @@ $typeMap: (
         border-radius: $radius-round !important;
       }
     }
+
+    &.outline {
+      color: $color;
+      background-color: transparent;
+      &:active {
+        &:not([aria-disabled='true']) {
+          color: $color;
+          background-color: $backgroundTap;
+        }
+      }
+    }
+    &:active {
+      color: $color;
+      &:not([aria-disabled='true']) {
+        background-color: $backgroundTap;
+      }
+    }
     &.disabled {
       cursor: not-allowed;
 
@@ -162,15 +181,6 @@ $typeMap: (
         color: rgba($color-text-base, 0.6);
       } @else {
         color: rgba($color-text-base-inverse, 0.6);
-      }
-    }
-    &.outline {
-      color: $color;
-      background-color: transparent;
-      &:active {
-        &:not([aria-disabled='true']) {
-          color: $color-text-base-inverse;
-        }
       }
     }
   }
@@ -197,6 +207,7 @@ $typeMap: (
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
+
     .#{$prefix-name}-button {
       margin-right: 0;
 
@@ -210,6 +221,9 @@ $typeMap: (
 
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+      }
+      &.block {
+        flex: 1 1 0%;
       }
     }
   }
