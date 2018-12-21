@@ -23,6 +23,13 @@ $animateMap: (
   slideLeft: 'slide-left'
 );
 
+.shake {
+  animation-name: shake;
+  animation-play-state: running;
+
+  @include effect();
+}
+
 @each $animateName, $animateClassName in $animateMap {
   .to-#{$animateClassName}-enter,
   .to-#{$animateClassName}-enter-active,
@@ -161,5 +168,27 @@ $animateMap: (
     transform: scale(0, 0);
 
     opacity: 0;
+  }
+}
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
   }
 }

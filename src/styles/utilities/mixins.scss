@@ -1,81 +1,143 @@
 @import 'animations';
 
-@mixin scale-hairline-common($color, $top, $right, $bottom, $left) {
+@mixin hairline-common($color, $direction) {
   position: absolute;
-  z-index: 1;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-
-  display: block;
+  z-index: 2;
 
   content: '';
+  transform-origin: 100% 50%;
 
   background-color: $color;
+
+  @if $direction == top {
+    transform: scaleY(0.5);
+    @media (min-resolution: 3dppx) {
+      transform: scaleY(0.33);
+    }
+  } @else if $direction == bottom {
+    transform: scaleY(0.5);
+    @media (min-resolution: 3dppx) {
+      transform: scaleY(0.33);
+    }
+  } @else if $direction == left {
+    transform: scaleX(0.5);
+    @media (min-resolution: 3dppx) {
+      transform: scaleX(0.33);
+    }
+  } @else if $direction == right {
+    transform: scaleX(0.5);
+    @media (min-resolution: 3dppx) {
+      transform: scaleX(0.33);
+    }
+  }
 }
 
-@mixin hairline($direction: 'all', $color: $border-color-base, $radius: 0) {
-  @if $direction == 'all' {
-    border: 1px solid $color;
-  } @else {
-    border-#{$direction}: 1px solid $color;
-  }
+@mixin hairline(
+  $direction: 'all',
+  $color: $border-color-base,
+  $radius: 0,
+  $size: $border-width-base
+) {
+  @if $direction == 'top' {
+    &:after {
+      top: 0;
+      right: auto;
+      bottom: auto;
+      left: 0;
 
-  @if $direction== 'all' {
-    @media (min-resolution: 2dppx) {
-      position: relative;
+      width: 200%;
+      height: $size;
 
-      border: none;
-      &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
+      transform-origin: 50% 0;
 
-        box-sizing: border-box;
-        width: 200%;
-        height: 200%;
+      @include hairline-common($color, $direction);
+    }
+  } @else if $direction == 'bottom' {
+    &:before {
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: 0;
 
-        content: '';
-        transform: scale(0.5);
-        transform-origin: 0 0;
-        pointer-events: none;
+      width: 200%;
+      height: $size;
 
-        border: 1px solid $color;
-        border-radius: $radius * 2;
-        @content;
-      }
+      transform-origin: 50% 100%;
+
+      @include hairline-common($color, $direction);
+    }
+  } @else if $direction == 'left' {
+    &:after {
+      top: 0;
+      right: auto;
+      bottom: auto;
+      left: 0;
+
+      width: $size;
+      height: 100%;
+
+      transform-origin: 0 50%;
+
+      @include hairline-common($color, $direction);
+    }
+  } @else if $direction == 'right' {
+    &:before {
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: auto;
+
+      width: $size;
+      height: 100%;
+
+      transform-origin: 100% 50%;
+
+      @include hairline-common($color, $direction);
     }
   } @else {
-    @media (min-resolution: 2dppx) {
-      border-#{$direction}: none;
-      &:before {
-        width: 100%;
-        height: 1px;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: auto;
+      bottom: auto;
+      left: 0;
 
-        transform: scaleY(0.5);
-        transform-origin: 50% 50%;
+      box-sizing: border-box;
+      width: 200%;
+      height: 200%;
 
-        @include scale-hairline-common($color, 0, auto, auto, 0);
-        @content;
-        @media (min-resolution: 3dppx) {
-          transform: scaleY(0.33);
-        }
-      }
+      content: '';
+      transform: scale(0.5);
+      transform-origin: 0 0;
+      pointer-events: none;
+
+      border: $size solid $color;
+      border-radius: $radius * 2;
+      @content;
     }
   }
 }
 
 @mixin hairlineRemove($direction: 'all') {
   @if $direction == 'all' {
-    border: 0;
-    &:before {
-      display: none !important;
+    &:after {
+      display: none;
     }
-  } @else {
-    border-#{$direction}: 0;
+  } @else if $direction == 'right' {
     &:before {
-      display: none !important;
+      display: none;
+    }
+  } @else if $direction == 'left' {
+    &:after {
+      display: none;
+    }
+  } @else if $direction == 'top' {
+    &:after {
+      display: none;
+    }
+  } @else if $direction == 'bottom' {
+    &:before {
+      display: none;
     }
   }
 }
