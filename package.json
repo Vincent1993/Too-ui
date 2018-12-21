@@ -2,7 +2,7 @@
   "name": "@toojs/too-ui",
   "author": "Evergreen Wang <vincentwang.720@gmail.com>",
   "description": "Mobile UI Toolkit baseed on Vue",
-  "version": "0.2.10-alpha.1",
+  "version": "0.2.10-alpha.2",
   "license": "MIT",
   "main": "lib/too-ui.common.js",
   "typings": "types/index.d.ts",
