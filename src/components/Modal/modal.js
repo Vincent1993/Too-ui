@@ -1,6 +1,7 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import className from 'classnames';
 import PropTypes from 'vue-types';
+import { addClass, removeClass } from '../_util/dom';
 
 @Component({
   props: {
@@ -17,7 +18,8 @@ import PropTypes from 'vue-types';
     destroyOnClose: PropTypes.bool.def(false),
     position: PropTypes.oneOf(['center', 'left', 'right', 'bottom', 'top']).def(
       'center'
-    )
+    ),
+    unclosableAnimated: PropTypes.bool.def(true)
   }
 })
 export default class Modal extends Vue {
@@ -94,7 +96,14 @@ export default class Modal extends Vue {
 
   maskClickHandler() {
     if (this.maskClosable) {
-      this.closeModal();
+      return this.closeModal();
+    }
+    if (this.unclosableAnimated) {
+      addClass(this.$el.lastChild, 'shake');
+
+      setTimeout(() => {
+        removeClass(this.$el.lastChild, 'shake');
+      }, 500);
     }
   }
   showModal() {
