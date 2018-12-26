@@ -1,0 +1,60 @@
+@import '~@/styles/base/index';
+@import '~@/styles/utilities/mixins';
+@import '~@/styles/base/_colors-palette.scss';
+
+// Button color map
+$button-color-map: (
+  primary: (
+    fill-color: $green50,
+    tap-fill-color: $green40,
+    text-color: $color-text-base-inverse,
+    border-color: $green50
+  ),
+  secondary: (
+    fill-color: $gray50,
+    tap-fill-color: $gray40,
+    text-color: $color-text-base,
+    border-color: $gray50
+  ),
+  error: (
+    fill-color: $red50,
+    tap-fill-color: $red40,
+    text-color: $color-text-base-inverse,
+    border-color: $red50
+  ),
+  warn: (
+    fill-color: $yellow50,
+    tap-fill-color: $yellow40,
+    text-color: $color-text-base-inverse,
+    border-color: $yellow50
+  ),
+  disabled: (
+    fill-color: $gray70,
+    text-color: $black70,
+    border-color: $gray70
+  )
+);
+
+$button-size-map: (
+  medium: (
+    height: 40 * $hd,
+    padding: $h-spacing-lg
+  ),
+  small: (
+    height: 30 * $hd,
+    padding: $h-spacing-sm
+  )
+);
+// Button size
+$button-height: 40 * $hd;
+$button-height-s: 30 * $hd;
+
+$button-font-size: 18 * $hd;
+
+// Button border
+$button-border-radius: 5 * $hd;
+$button-border-radius-round: $radius-round;
+$button-border-color: $gray50;
+
+// Button gutter
+$button-horizontal-padding: $h-spacing-lg;

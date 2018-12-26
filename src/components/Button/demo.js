@@ -7,15 +7,26 @@ export default class ButtonDemo extends Vue {
     return (
       <div class="demo-container">
         <Button.Group>
-          <Button>default</Button>
-          <Button type="primary">primary</Button>
-          <Button type="warn">warn</Button>
-          <Button type="error">error</Button>
+          <Button loading>default</Button>
+          <Button type="secondary" block inactive>
+            次级按钮
+          </Button>
+          <Button type="warn" subtle>
+            warn subtle
+          </Button>
+          <Button type="error" disabled>
+            error
+          </Button>
+          <Button type="error" size="small">
+            small
+          </Button>
         </Button.Group>
         <Button.Group>
-          <Button round>default round</Button>
-          <Button round type="primary">
-            primary round
+          <Button loading>
+            <i class="fab fa-github" />
+          </Button>
+          <Button round type="secondary">
+            secondary round
           </Button>
           <Button round type="warn">
             warn
@@ -24,16 +35,19 @@ export default class ButtonDemo extends Vue {
             error
           </Button>
         </Button.Group>
-        <Button.Group>
-          <Button disabled>default disabled</Button>
-          <Button disabled type="primary">
-            primary disabled
+        <Button.Group addons>
+          <Button block>default </Button>
+          <Button type="warn" block>
+            warn{' '}
+          </Button>
+          <Button type="secondary" block>
+            secondary{' '}
           </Button>
         </Button.Group>
         <Button.Group>
           <Button outline>default outline</Button>
-          <Button type="primary" outline>
-            primary outline
+          <Button type="secondary" outline>
+            secondary outline
           </Button>
           <Button type="warn" outline>
             warn outline
@@ -42,26 +56,10 @@ export default class ButtonDemo extends Vue {
             error outline
           </Button>
         </Button.Group>
-        <Button.Group inline>
-          <Button>default inline</Button>
-          <Button type="primary">primary inline</Button>
-          <Button type="warn">warn inline</Button>
+        <Button.Group sticky>
+          <Button>Sticky</Button>
+          <Button type="warn">Sticky</Button>
         </Button.Group>
-        <Button.Group inline>
-          <Button size="small">inline small</Button>
-          <Button type="primary" size="small">
-            inline small
-          </Button>
-          <Button type="warn" size="small">
-            inline small
-          </Button>
-          <Button type="error" size="small">
-            inline small
-          </Button>
-        </Button.Group>
-        <Button sticky type="primary">
-          Sticky
-        </Button>
       </div>
     );
   }

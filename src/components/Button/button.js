@@ -1,15 +1,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
-import './button.scss';
+import './styles/button.scss';
 
 @Component({
   props: {
-    type: PropTypes.oneOf(['primary', 'warn', 'error', 'default']).def(
-      'default'
+    type: PropTypes.oneOf(['primary', 'warn', 'error', 'secondary']).def(
+      'primary'
     ),
     prefixCls: PropTypes.string.def('to-button'),
     size: PropTypes.oneOf(['small', 'medium']).def('medium'),
-    icon: PropTypes.any,
+    subtle: PropTypes.bool.def(false),
+    inactive: PropTypes.bool.def(false),
     disabled: PropTypes.bool.def(false),
     inline: PropTypes.bool.def(false),
     outline: PropTypes.bool.def(false),
@@ -23,25 +24,20 @@ class Button extends Vue {
   get classes() {
     return {
       [this.prefixCls]: true,
-      [`${this.prefixCls}-${this.size}`]: true,
-      [`${this.prefixCls}-${this.type}`]: true,
+      [this.type]: true,
+      [this.size]: true,
+      subtle: this.subtle,
       outline: this.outline,
       inline: this.inline || this.$parent.inline || this.$parent.addons,
-      disabled: this.disabled,
       sticky: this.sticky,
       round: this.round,
       loading: this.loading,
-      block: this.block
+      block: this.block,
+      inactive: this.inactive,
+      disabled: this.disabled
     };
   }
 
-  get iconRender() {
-    return this.icon || this.$slots.icon ? (
-      <span class={`${this.prefixCls}-icon`}>
-        {this.icon || this.$slots.icon}
-      </span>
-    ) : null;
-  }
   clickHandler(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -53,12 +49,12 @@ class Button extends Vue {
     return (
       <a
         role="button"
+        disabled={this.disabled}
         class={this.classes}
         onClick={this.clickHandler.bind(this)}
         aria-disabled={this.disabled}
       >
-        {this.iconRender}
-        {this.$slots.default}
+        {this.loading ? null : this.$slots.default}
       </a>
     );
   }

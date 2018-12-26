@@ -1,0 +1,13 @@
+@import './_mixins.scss';
+
+.button-group {
+  @include button-group-base;
+
+  &.addons {
+    @include button-group-addons;
+  }
+
+  &.sticky {
+    @include button-group-sticky;
+  }
+}
