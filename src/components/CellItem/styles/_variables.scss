@@ -1,0 +1,12 @@
+@import '~@/styles/themes/index.scss';
+@import '~@/styles/utilities/_functions.scss';
+@import '~@/styles/base/variables.scss';
+
+$cell-item-min-height: 50 * $hd;
+
+$cell-item-color-map: (
+  base: get-theme-prop('text', 'body'),
+  brief: get-theme-prop('text', 'secondary'),
+  prefix: get-theme-prop('text', 'secondary'),
+  addon: get-theme-prop('text', 'secondary')
+);

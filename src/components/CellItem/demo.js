@@ -36,12 +36,7 @@ export default class CellItemDemo extends Vue {
             }}
           />
         </CellItem>
-        <CellItem
-          title="标题内容"
-          brief="展示摘要描述"
-          addon="额外描述"
-          disabled
-        >
+        <CellItem title="无边框" brief="展示摘要描述" addon="额外描述" noBorder>
           <span
             slot="prefix"
             style={{

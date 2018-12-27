@@ -1,0 +1,28 @@
+@import './_variables.scss';
+@import './_mixins';
+
+.#{$prefix-name}-cell-item {
+  @include cell-item-base;
+
+  &-body {
+    @include cell-item-body-base;
+  }
+  &-prefix {
+    @include cell-item-prefix-base;
+  }
+  &-content {
+    @include cell-item-content-base;
+  }
+  &-brief {
+    @include cell-item-brief-base;
+  }
+  &-addon {
+    @include cell-item-addon-base;
+  }
+  &-extra {
+    @include cell-item-extra-base;
+  }
+  .arrow-right {
+    @include arrow('right', map-get($cell-item-color-map, 'addon'));
+  }
+}

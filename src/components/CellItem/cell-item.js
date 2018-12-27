@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
+import './styles/cell-item.scss';
 
 @Component({
   props: {
@@ -15,9 +16,7 @@ import PropTypes from 'vue-types';
 export default class CellItem extends Vue {
   get classes() {
     return {
-      [this.prefixCls]: true,
-      disabled: this.disabled,
-      noBorder: this.noBorder
+      [this.prefixCls]: true
     };
   }
 
@@ -58,11 +57,16 @@ export default class CellItem extends Vue {
   }
   render() {
     return (
-      <div class={this.classes} onClick={this.clickHandler}>
+      <div
+        class={this.classes}
+        onClick={this.clickHandler}
+        disabled={this.disabled}
+      >
         <div
           class={{
             [`${this.prefixCls}-body`]: true,
-            mutiline: this.briefRender
+            mutiline: this.briefRender,
+            'no-border': this.noBorder
           }}
         >
           {this.prefixRender}

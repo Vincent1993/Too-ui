@@ -1,0 +1,76 @@
+@import '~@/styles/utilities/_mixins';
+@import '~@/styles/typography/_mixins.scss';
+@import './_variables.scss';
+
+@mixin cell-item-text-color-fill($type) {
+  &:not([disabled]) {
+    color: map-get($cell-item-color-map, $type);
+  }
+}
+
+@mixin cell-item-base() {
+  @include cell-item-text-color-fill('base');
+
+  position: relative;
+
+  &[disabled] {
+    opacity: .8;
+  }
+}
+
+@mixin cell-item-body-base() {
+  @include hairline('bottom');
+  @include set-typography('body');
+
+  position: relative;
+
+  display: flex;
+
+  box-sizing: border-box;
+  min-height: $cell-item-min-height;
+  padding: $v-spacing-md 0;
+
+  align-items: center;
+  justify-content: space-between;
+
+  &.mutiline {
+    padding: $v-spacing-md + 2 0;
+  }
+  &.no-border {
+    @include hairlineRemove('bottom');
+  }
+}
+
+@mixin cell-item-prefix-base {
+  margin-right: $h-spacing-lg;
+
+  flex-shrink: 0;
+}
+
+@mixin cell-item-content-base {
+  @include set-typography('body');
+
+  flex: 1 1 0;
+}
+
+@mixin cell-item-brief-base {
+  @include set-typography('caption');
+  @include cell-item-text-color-fill('brief');
+
+  margin-top: $v-spacing-sm;
+}
+
+@mixin cell-item-addon-base {
+  @include set-typography('body2');
+  @include cell-item-text-color-fill('addon');
+
+  margin-left: $h-spacing-lg;
+
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+@mixin cell-item-extra-base {
+  padding: $v-spacing-lg 0;
+}
