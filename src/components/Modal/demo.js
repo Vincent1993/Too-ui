@@ -7,6 +7,8 @@ export default class ModalDemo extends Vue {
   showModal1 = false;
   showModal2 = false;
   showModal3 = false;
+  showModal4 = false;
+  showModal5 = false;
   render() {
     return (
       <div class="demo-container">
@@ -19,6 +21,12 @@ export default class ModalDemo extends Vue {
           </Button>
           <Button type="primary" onClick={() => (this.showModal3 = true)}>
             bottom
+          </Button>
+          <Button type="primary" onClick={() => (this.showModal4 = true)}>
+            left
+          </Button>
+          <Button type="primary" onClick={() => (this.showModal5 = true)}>
+            right
           </Button>
         </Button.Group>
 
@@ -40,6 +48,20 @@ export default class ModalDemo extends Vue {
           visible={this.showModal3}
           v-model={this.showModal3}
           position="bottom"
+        >
+          content
+        </Modal>
+        <Modal
+          visible={this.showModal4}
+          v-model={this.showModal4}
+          position="left"
+        >
+          content
+        </Modal>
+        <Modal
+          visible={this.showModal5}
+          v-model={this.showModal5}
+          position="right"
         >
           content
         </Modal>

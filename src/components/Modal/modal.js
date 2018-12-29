@@ -2,6 +2,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 import className from 'classnames';
 import PropTypes from 'vue-types';
 import { addClass, removeClass } from '../_util/dom';
+import './styles/modal.scss';
 
 @Component({
   props: {
@@ -26,7 +27,7 @@ export default class Modal extends Vue {
   modalShow = false;
   modalContentShow = false;
 
-  get popupAttributes() {
+  get modalAttributes() {
     const { modalShow, wrapStyle, prefixCls, position } = this;
     return {
       style: {
@@ -131,7 +132,7 @@ export default class Modal extends Vue {
 
   render() {
     return (
-      <div {...this.popupAttributes}>
+      <div {...this.modalAttributes}>
         <transition name="to-fade">
           {this.modalContentShow ? (
             <div {...this.maskAttributes} onClick={this.maskClickHandler} />

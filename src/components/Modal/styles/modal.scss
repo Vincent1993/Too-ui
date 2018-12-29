@@ -1,0 +1,67 @@
+@import '_mixins.scss';
+
+.#{$prefix-name}-modal {
+  @include modal-base;
+  &--center {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--right {
+    .#{$prefix-name}-modal-content {
+      left: 0;
+    }
+  }
+  &--left {
+    .#{$prefix-name}-modal-content {
+      right: 0;
+    }
+  }
+  &-content {
+    @include modal-content-base;
+  }
+
+  &--top,
+  &--bottom,
+  &--right,
+  &--left {
+    .#{$prefix-name}-modal-content {
+      border-radius: 0;
+    }
+  }
+  &--top,
+  &--bottom {
+    .#{$prefix-name}-modal-content {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+
+  &--right,
+  &--left {
+    .#{$prefix-name}-modal-content {
+      bottom: 0;
+
+      min-width: 40%;
+      height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $fill-mask;
+  }
+}

@@ -1,0 +1,12 @@
+@import '~@/styles/base/index.scss';
+@import '~@/styles/utilities/mixins';
+
+$modal-content-background: $white;
+
+$modal-content-min-width: 280px;
+$modal-content-max-width: 560px;
+$modal-content-margin: $h-spacing-lg;
+$modal-content-spacing: 2 * $modal-content-margin !default;
+
+$modal-z: 20;
+$modal-content-z: $modal-z + 10;
