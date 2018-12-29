@@ -1,0 +1,10 @@
+@import '~@/styles/themes/index.scss';
+@import '~@/styles/base/index.scss';
+
+$switch-width: 45 * $hd;
+$switch-height: 24 * $hd;
+$switch-border-radius: $switch-height;
+
+$switch-fill-color: $gray40;
+$switch-fill-color-inverse: $white;
+$switch-active-fill-color: $to-theme-brand;

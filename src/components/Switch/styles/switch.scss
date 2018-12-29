@@ -1,0 +1,7 @@
+@import '_mixins.scss';
+
+.#{$prefix-name}-switch {
+  @include switch-base;
+  @include switch-active-base;
+  @include switch-disabled-base;
+}

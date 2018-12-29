@@ -1,0 +1,65 @@
+@import '_variables.scss';
+
+@mixin switch-base {
+  position: relative;
+
+  box-sizing: border-box;
+  width: $switch-width;
+  height: $switch-height;
+
+  transition: .15s background ease-out;
+
+  border-radius: $switch-border-radius;
+  background: $switch-fill-color;
+  &:before,
+  &:after {
+    position: absolute;
+
+    content: '';
+  }
+  &:before {
+    top: 0;
+    left: 0;
+
+    width: $switch-width / 2;
+    height: $switch-height;
+
+    border-radius: $switch-border-radius;
+    background-color: $switch-fill-color;
+  }
+  &:after {
+    top: 2px;
+    left: 2px;
+
+    width: ($switch-width / 2) - 4;
+    height: $switch-height - 4;
+
+    transition: transform .3s;
+
+    border-radius: 50%;
+    background-color: $switch-fill-color-inverse;
+  }
+}
+
+@mixin switch-active-base {
+  &.active {
+    background: $switch-active-fill-color;
+
+    &:before,
+    &:after {
+      background-color: $switch-fill-color-inverse;
+    }
+    &:after {
+      transform: translateX(($switch-width / 2) - 2);
+    }
+    &:before {
+      transform: scale(0);
+    }
+  }
+}
+
+@mixin switch-disabled-base {
+  &[disabled] {
+    opacity: .5;
+  }
+}
