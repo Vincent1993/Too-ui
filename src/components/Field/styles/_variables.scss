@@ -1,0 +1,14 @@
+@import '~@/styles/themes/index.scss';
+@import '~@/styles/utilities/index.scss';
+@import '~@/styles/typography/_mixins.scss';
+@import '~@/styles/base/variables.scss';
+
+$field-padding: $v-spacing-lg $h-spacing-lg;
+$field-container-fill: get-theme-prop('background', 'base');
+
+$field-color-map: (
+  base: get-theme-prop('text', 'body'),
+  title: get-theme-prop('text', 'body'),
+  brief: get-theme-prop('text', 'secondary'),
+  footer: get-theme-prop('text', 'secondary')
+);

@@ -1,0 +1,50 @@
+@import '_variables.scss';
+
+@mixin field-text-fill($type) {
+  &:not([disabled]) {
+    color: map-get($field-color-map, $type);
+  }
+}
+
+@mixin field-base {
+  @include unselectable;
+
+  padding: $field-padding;
+
+  background-color: $field-container-fill;
+}
+
+@mixin field-header-base {
+  &-header {
+    margin-bottom: $v-spacing-md;
+  }
+  &-title {
+    @include set-typography('headline6');
+    @include field-text-fill('title');
+    @include ellipsis;
+  }
+  &-brief {
+    @include set-typography('caption');
+    @include field-text-fill('brief');
+    @include ellipsis(2);
+  }
+}
+
+@mixin field-footer-base {
+  &-footer {
+    margin-top: $v-spacing-sm;
+  }
+}
+@mixin field-disabled-base {
+  &[disabled] {
+    opacity: .5;
+  }
+}
+
+@mixin field-full-width {
+  &.full-width {
+    @include paddingless;
+
+    background-color: transparent;
+  }
+}

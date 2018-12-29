@@ -1,0 +1,10 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{$prefix-name}-field {
+  @include field-base;
+  @include field-header-base;
+  @include field-footer-base;
+  @include field-disabled-base;
+  @include field-full-width;
+}
