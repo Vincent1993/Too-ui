@@ -1,0 +1,8 @@
+@import '~@/components/Modal/styles/_variables.scss';
+
+@import '~@/styles/base/index';
+
+$dialog-z: $modal-z + 1;
+$dialog-width: 80vw;
+$dialog-max-width: 560px;
+$dialog-padding: $v-spacing-lg * 2 $h-spacing-lg * 2;

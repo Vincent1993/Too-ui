@@ -1,0 +1,68 @@
+@import '~@/styles/typography/_mixins.scss';
+@import '~@/styles/utilities/_functions.scss';
+@import '~@/styles/utilities/_mixins.scss';
+
+@mixin dialog-title-base() {
+  &-title {
+    @include set-typography('headline6');
+    @include theme-prop('color', get-theme-prop('text', 'base'));
+
+    margin-bottom: $v-spacing-lg;
+  }
+}
+
+@mixin dialog-body-base() {
+  &-body {
+    width: $dialog-width;
+    max-width: $dialog-max-width;
+    padding: $dialog-padding;
+
+    text-align: center;
+  }
+}
+
+@mixin dialog-text-base() {
+  &-text {
+    @include set-typography('body2');
+
+    display: flex;
+
+    justify-content: center;
+  }
+}
+
+@mixin dialog-icon-base() {
+  &-icon {
+    position: relative;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+    margin: $v-spacing-md auto $h-spacing-md;
+    .fa-check {
+      color: $green50;
+    }
+    .fa-times-circle {
+      color: $red50;
+    }
+  }
+}
+@mixin dialog-footer-base() {
+  &-footer {
+    @include hairline('top');
+
+    position: relative;
+    .#{$prefix-name}-button {
+      @include hairlineRemove;
+
+      font-size: 1rem;
+
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        @include hairline('right');
+      }
+    }
+  }
+}

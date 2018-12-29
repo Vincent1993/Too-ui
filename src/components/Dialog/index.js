@@ -68,6 +68,8 @@ Dialog.confirm = ({
       {
         content: cancelText,
         handler: onCancel,
+        type: 'secondary',
+        outline: true,
         ...cancelButtonProps
       },
       {

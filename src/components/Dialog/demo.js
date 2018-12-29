@@ -12,8 +12,7 @@ export default class DialogDemo extends Vue {
             onClick={() =>
               Dialog.confirm({
                 title: '确认提示框',
-                content: '确认要取消了?',
-                confirmButtonProps: { type: 'warn' }
+                content: '确认要取消了?'
               })
             }
           >

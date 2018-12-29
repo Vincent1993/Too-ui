@@ -1,0 +1,10 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{$prefix-name}-dialog {
+  @include dialog-title-base;
+  @include dialog-body-base;
+  @include dialog-text-base;
+  @include dialog-footer-base;
+  @include dialog-icon-base;
+}

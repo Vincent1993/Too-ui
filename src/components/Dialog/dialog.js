@@ -4,7 +4,7 @@ import Modal from '../Modal';
 import Button from '../Button';
 import { FontAwesomeIcon } from '../Icon';
 import omit from '../_util/omit';
-import './dialog.scss';
+import './styles/dialog.scss';
 
 @Component({
   props: {
@@ -50,11 +50,6 @@ export default class Dialog extends Modal {
         >
           <div class={`${this.prefixCls}-content`}>
             <div class={`${this.prefixCls}-body`}>
-              {this.closable ? (
-                <span class={[`${this.prefixCls}-close`]} onClick={this.hide}>
-                  <FontAwesomeIcon icon="times" />
-                </span>
-              ) : null}
               {this.icon ? (
                 <span class={[`${this.prefixCls}-icon`]}>
                   <FontAwesomeIcon icon={this.icon} size="2x" />
