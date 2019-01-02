@@ -1,0 +1,61 @@
+// Colors base
+$black-base: #252729 !default;
+$gray-base: #c1c1c2 !default;
+$yellow-base: #ffd16d !default;
+$red-base: #ff4f3e !default;
+$green-base: #75c940 !default;
+$blue-base: #3da8f5 !default;
+
+$black80: darken($black-base, 30%);
+$black70: darken($black-base, 20%);
+$black60: darken($black-base, 10%);
+$black50: $black-base;
+$black40: lighten($black-base, 10%);
+$black30: lighten($black-base, 20%);
+$black20: lighten($black-base, 30%);
+
+$gray80: darken($gray-base, 30%);
+$gray70: darken($gray-base, 20%);
+$gray60: darken($gray-base, 10%);
+$gray50: $gray-base;
+$gray40: lighten($gray-base, 10%);
+$gray30: lighten($gray-base, 20%);
+$white: lighten($gray-base, 30%);
+
+$yellow80: darken($yellow-base, 30%);
+$yellow70: darken($yellow-base, 20%);
+$yellow60: darken($yellow-base, 10%);
+$yellow50: $yellow-base;
+$yellow40: lighten($yellow-base, 10%);
+$yellow30: lighten($yellow-base, 20%);
+$yellow20: lighten($yellow-base, 30%);
+
+$red80: darken($red-base, 30%);
+$red70: darken($red-base, 20%);
+$red60: darken($red-base, 10%);
+$red50: $red-base;
+$red40: lighten($red-base, 10%);
+$red30: lighten($red-base, 20%);
+$red20: lighten($red-base, 30%);
+
+$green80: darken($green-base, 30%);
+$green70: darken($green-base, 20%);
+$green60: darken($green-base, 10%);
+$green50: $green-base;
+$green40: lighten($green-base, 10%);
+$green30: lighten($green-base, 20%);
+$green20: lighten($green-base, 30%);
+
+$blue80: darken($blue-base, 30%);
+$blue70: darken($blue-base, 20%);
+$blue60: darken($blue-base, 10%);
+$blue50: $blue-base;
+$blue40: lighten($blue-base, 10%);
+$blue30: lighten($blue-base, 20%);
+$blue20: lighten($blue-base, 30%);
+
+// Background color base
+$bg5: rgba($black-base, .5);
+$bg3: rgba($black-base, .3);
+$bg1: rgba($black-base, .1);
+$bg-white: rgba($white, .5);

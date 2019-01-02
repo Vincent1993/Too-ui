@@ -1,11 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { CellItem } from './index';
+import { Field } from '@/components/Field/';
 
 @Component
 export default class CellItemDemo extends Vue {
   render() {
     return (
-      <div class="demo-container">
+      <Field title="CellItem" brief="CellItem List">
         <CellItem title="标题内容" brief="展示摘要描述" addon="额外描述" arrow>
           <span
             slot="prefix"
@@ -54,7 +55,7 @@ export default class CellItemDemo extends Vue {
             面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。
           </p>
         </CellItem>
-      </div>
+      </Field>
     );
   }
 }

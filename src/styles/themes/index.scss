@@ -1,0 +1,14 @@
+@import 'light.scss';
+@import 'dark.scss';
+@import 'colors-palette';
+
+$to-theme-brand: $green50;
+$to-theme-map: (
+  light: (
+    text: $light-theme-text-colors,
+    background: $light-theme-background-colors
+  ),
+  dark: (
+    background: $dark-theme-background-colors
+  )
+);

@@ -1,6 +1,7 @@
-@import '~@/styles/base/index';
-@import '~@/styles/utilities/mixins';
-@import '~@/styles/base/_colors-palette.scss';
+@import '~@/styles/base/variables.scss';
+@import '~@/styles/utilities/_mixins.scss';
+@import '~@/styles/typography/_mixins.scss';
+@import '~@/styles/themes/index.scss';
 
 // Button color map
 $button-color-map: (

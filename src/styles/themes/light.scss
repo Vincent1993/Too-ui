@@ -1,0 +1,15 @@
+@import './_colors-palette.scss';
+
+$light-theme-text-colors: (
+  base: $black70,
+  secondary: $gray50,
+  placeholder: $gray30,
+  disabled: lighten($black20, 30),
+  link: $blue50,
+  caption: $black40,
+  body: $black70
+) !default;
+
+$light-theme-background-colors: (
+  base: $bg-white
+) !default;

@@ -1,4 +1,4 @@
-@import 'animations';
+@import '../themes/index.scss';
 
 @mixin hairline-common($color, $direction) {
   position: absolute;
@@ -10,24 +10,24 @@
   background-color: $color;
 
   @if $direction == top {
-    transform: scaleY(0.5);
+    transform: scaleY(.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleY(0.33);
+      transform: scaleY(.33);
     }
   } @else if $direction == bottom {
-    transform: scaleY(0.5);
+    transform: scaleY(.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleY(0.33);
+      transform: scaleY(.33);
     }
   } @else if $direction == left {
-    transform: scaleX(0.5);
+    transform: scaleX(.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleX(0.33);
+      transform: scaleX(.33);
     }
   } @else if $direction == right {
-    transform: scaleX(0.5);
+    transform: scaleX(.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleX(0.33);
+      transform: scaleX(.33);
     }
   }
 }
@@ -40,6 +40,8 @@
 ) {
   @if $direction == 'top' {
     &:after {
+      @include hairline-common($color, $direction);
+
       top: 0;
       right: auto;
       bottom: auto;
@@ -49,11 +51,11 @@
       height: $size;
 
       transform-origin: 50% 0;
-
-      @include hairline-common($color, $direction);
     }
   } @else if $direction == 'bottom' {
     &:before {
+      @include hairline-common($color, $direction);
+
       top: auto;
       right: auto;
       bottom: 0;
@@ -63,11 +65,11 @@
       height: $size;
 
       transform-origin: 50% 100%;
-
-      @include hairline-common($color, $direction);
     }
   } @else if $direction == 'left' {
     &:after {
+      @include hairline-common($color, $direction);
+
       top: 0;
       right: auto;
       bottom: auto;
@@ -77,11 +79,11 @@
       height: 100%;
 
       transform-origin: 0 50%;
-
-      @include hairline-common($color, $direction);
     }
   } @else if $direction == 'right' {
     &:before {
+      @include hairline-common($color, $direction);
+
       top: 0;
       right: 0;
       bottom: auto;
@@ -91,8 +93,6 @@
       height: 100%;
 
       transform-origin: 100% 50%;
-
-      @include hairline-common($color, $direction);
     }
   } @else {
     &:after {
@@ -107,7 +107,7 @@
       height: 200%;
 
       content: '';
-      transform: scale(0.5);
+      transform: scale(.5);
       transform-origin: 0 0;
       pointer-events: none;
 
@@ -179,7 +179,33 @@
   word-wrap: break-word;
   word-break: break-all;
 }
+@mixin word-break {
+  word-wrap: break-word;
+  word-break: break-all;
+}
 
+@mixin ellipsis($num: 1, $lineHeight: 20) {
+  @if $num == 1 {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  } @else {
+    line-height: $lineHeight + px;
+
+    display: -webkit-box;
+    overflow: hidden;
+
+    max-height: $lineHeight * $num + px;
+
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+  }
+}
 @mixin txtOverflow($num: 1, $lineHeight: 20) {
   @if $num == 1 {
     overflow: hidden;
@@ -188,17 +214,17 @@
     text-overflow: ellipsis;
     word-break: break-word;
   } @else {
+    line-height: $lineHeight + px;
+
     display: -webkit-box;
     overflow: hidden;
-    -webkit-box-orient: vertical;
 
     max-height: $lineHeight * $num + px;
 
     text-overflow: ellipsis;
     word-break: break-word;
 
-    line-height: $lineHeight + px;
-
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: $num;
   }
 }
@@ -206,7 +232,6 @@
 @mixin arrow($direction: 'right', $color: $color-text-base) {
   &:after {
     display: flex;
-    align-items: center;
 
     padding: 3px;
 
@@ -214,6 +239,8 @@
 
     border: solid $color;
     border-width: 0 1px 1px 0;
+
+    align-items: center;
 
     @if $direction == 'right' {
       transform: rotate(-45deg);
@@ -224,5 +251,13 @@
     } @else {
       transform: rotate(45deg);
     }
+  }
+}
+
+@mixin theme-prop($property, $style, $important: false) {
+  @if $important {
+    #{$property}: $style !important;
+  } @else {
+    #{$property}: $style;
   }
 }

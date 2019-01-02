@@ -1,0 +1,9 @@
+@import './_variables.scss';
+
+@mixin set-typography($style) {
+  $style-props: map-get($typography-styles, $style);
+
+  @each $key, $value in $style-props {
+    #{$key}: $value;
+  }
+}

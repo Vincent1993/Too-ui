@@ -1,8 +1,4 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-@import 'minireset.scss';
 @import 'variables.scss';
-
-* {
-  font-family: $family-sans-serif;
-}
+@import 'minireset.scss';

@@ -1,0 +1,7 @@
+@import '../themes/index.scss';
+
+@function get-theme-prop($type, $name, $theme-name: 'light') {
+  $theme-prop: map-get($to-theme-map, $theme-name);
+  $theme-prop-type: map-get($theme-prop, $type);
+  @return map-get($theme-prop-type, $name);
+}
