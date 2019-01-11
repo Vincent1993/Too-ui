@@ -2,16 +2,15 @@ import { Component, Watch, Emit } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
 import Modal from '../Modal';
 import Button from '../Button';
-import { FontAwesomeIcon } from '../Icon';
+import { Icon } from '../Icon';
 import omit from '../_util/omit';
-import './styles/dialog.scss';
 
 @Component({
   props: {
     prefixCls: PropTypes.string.def('to-dialog'),
     value: PropTypes.bool.def(false),
     title: PropTypes.string.def(''),
-    icon: PropTypes.string.def(''),
+    icon: PropTypes.oneOfType([String, Object]).def(''),
     content: PropTypes.oneOfType([String, Object]).def(''),
     buttons: PropTypes.array.isRequired,
     closable: PropTypes.bool.def(true)
@@ -52,7 +51,11 @@ export default class Dialog extends Modal {
             <div class={`${this.prefixCls}-body`}>
               {this.icon ? (
                 <span class={[`${this.prefixCls}-icon`]}>
-                  <FontAwesomeIcon icon={this.icon} size="2x" />
+                  <Icon
+                    scriptUrl="http://at.alicdn.com/t/font_1011143_puq4gu7a03s.js"
+                    type={this.icon}
+                    {...{ props: this.icon }}
+                  />
                 </span>
               ) : null}
               <h2 class={`${this.prefixCls}-title`}>

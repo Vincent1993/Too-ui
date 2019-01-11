@@ -1,6 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Dialog from './index';
-import Button from '../Button/';
+import Button from '@/components/Button/index.js';
+import '@/components/Button/styles/index.js';
+import Dialog from './index.js';
+import './styles/index.js';
 
 @Component
 export default class DialogDemo extends Vue {
@@ -30,7 +32,7 @@ export default class DialogDemo extends Vue {
             show dialog success
           </Button>
           <Button
-            type="primary"
+            type="error"
             onClick={() =>
               Dialog.failed({
                 title: '确认提示框',
@@ -49,7 +51,7 @@ export default class DialogDemo extends Vue {
               })
             }
           >
-            show dialog alert
+            show dialog warn
           </Button>
         </Button.Group>
       </div>

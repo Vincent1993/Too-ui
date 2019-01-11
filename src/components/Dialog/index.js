@@ -114,15 +114,29 @@ Dialog.alert = ({
 };
 
 Dialog.warn = props => {
-  return Dialog.alert({ ...props, confirmButtonProps: { type: 'warn' } });
+  return Dialog.alert({
+    ...props,
+    icon: 'warn-circle-fill',
+    confirmButtonProps: { type: 'default' }
+  });
 };
 
 Dialog.succeed = props => {
-  return Dialog.alert({ ...props, icon: 'check' });
+  return Dialog.alert({
+    ...props,
+    icon: { type: 'success-circle-fill', fill: '#75c940' }
+  });
 };
 
 Dialog.failed = props => {
-  return Dialog.alert({ ...props, icon: 'times-circle' });
+  return Dialog.alert({
+    ...props,
+    icon: {
+      type: 'close-cirlce',
+      fill: '#ff4f3e'
+    },
+    confirmButtonProps: { type: 'default' }
+  });
 };
 
 export default Dialog;
