@@ -1,7 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
-import './styles/button-group.scss';
-
 @Component({
   props: {
     sticky: PropTypes.bool.def(false),

@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Button } from './index';
+import Button from './index.js';
+import './styles/index.js';
 
 @Component
 export default class ButtonDemo extends Vue {
