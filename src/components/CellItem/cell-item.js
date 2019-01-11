@@ -1,6 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
-import './styles/cell-item.scss';
 
 @Component({
   props: {
