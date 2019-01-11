@@ -12,6 +12,7 @@
     "src"
   ],
   "scripts": {
+    "bootstrap": "yarn | npm install",
     "serve": "vue-cli-service serve --open --port 8989",
     "build:lib": "vue-cli-service build  --target lib --name too-ui ./src/components/index.js --dest lib --no-clean",
     "test": "vue-cli-service test",
@@ -68,15 +69,7 @@
       "@babel/typescript"
     ],
     "plugins": [
-      "jsx-v-model",
-      [
-        "import",
-        {
-          "libraryName": "@packages",
-          "libraryDirectory": "components",
-          "style": true
-        }
-      ]
+      "jsx-v-model"
     ]
   },
   "eslintConfig": {

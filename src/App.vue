@@ -5,6 +5,7 @@
       <router-link to="/elements/dialog">Dialog</router-link> |
       <router-link to="/elements/modal">Modal</router-link> |
       <router-link to="/elements/field">Field</router-link> |
+      <router-link to="/elements/toast">Toast</router-link> |
       <router-link to="/elements/landscape">Landscape</router-link> |
       <router-link to="/elements/switch">Switch</router-link> |
       <router-link to="/elements/button">Button</router-link>
@@ -14,7 +15,7 @@
 </template>
 
 <style lang="scss">
-@import '~@/styles/base/index.scss';
+@import "~@/styles/base/index.scss";
 .demo-container {
   padding: 10px;
   &.full-width {
@@ -43,5 +44,4 @@ body {
     }
   }
 }
-
 </style>
