@@ -1,9 +1,6 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import className from 'classnames';
 import PropTypes from 'vue-types';
 import { addClass, removeClass } from '../_util/dom';
-import './styles/modal.scss';
-
 @Component({
   props: {
     prefixCls: PropTypes.string.def('to-modal'),
@@ -16,7 +13,7 @@ import './styles/modal.scss';
     contentStyle: PropTypes.object,
     maskStyle: PropTypes.object,
     transparent: PropTypes.bool.def(false),
-    destroyOnClose: PropTypes.bool.def(false),
+    destroyOnClose: PropTypes.bool.def(true),
     position: PropTypes.oneOf(['center', 'left', 'right', 'bottom', 'top']).def(
       'center'
     ),
@@ -34,9 +31,10 @@ export default class Modal extends Vue {
         display: modalShow ? 'flex' : 'none',
         ...wrapStyle
       },
-      class: className(prefixCls, {
+      class: {
+        [prefixCls]: true,
         [`${prefixCls}--${position}`]: true
-      })
+      }
     };
   }
 
@@ -45,9 +43,7 @@ export default class Modal extends Vue {
 
     return {
       style: { display: transparent ? 'none' : 'block', ...maskStyle },
-      class: className({
-        [`${prefixCls}-mask`]: true
-      })
+      class: { [`${prefixCls}-mask`]: true }
     };
   }
 
@@ -55,9 +51,7 @@ export default class Modal extends Vue {
     const { prefixCls, contentStyle } = this;
     return {
       style: { ...contentStyle },
-      class: className({
-        [`${prefixCls}-content`]: true
-      })
+      class: { [`${prefixCls}-content`]: true }
     };
   }
 
