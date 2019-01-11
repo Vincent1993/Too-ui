@@ -1,0 +1,16 @@
+@import '~@/styles/base/variables.scss';
+
+.#{$prefix-name}-icon {
+  line-height: 0;
+
+  display: inline-block;
+
+  text-align: center;
+  text-transform: none;
+  & > * {
+    line-height: 1;
+  }
+  svg {
+    display: inline-block;
+  }
+}
