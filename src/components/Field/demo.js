@@ -1,7 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Field } from './index';
-import CellItem from '@/components/CellItem/';
-
+import { Field, CellItem } from 'components'
 @Component
 export default class FieldDemo extends Vue {
   render() {

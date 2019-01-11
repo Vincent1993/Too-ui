@@ -1,4 +1,4 @@
-import { Component, Watch, Emit } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
 import Modal from '../Modal';
 import Button from '../Button';

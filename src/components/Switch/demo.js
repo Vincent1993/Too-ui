@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Switch from './index.js';
+import { Switch } from 'components';
 
 @Component
 export default class SwitchDemo extends Vue {

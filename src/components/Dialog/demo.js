@@ -1,9 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Button from '@/components/Button/index.js';
-import '@/components/Button/styles/index.js';
-import Dialog from './index.js';
-import './styles/index.js';
-
+import { Dialog, Button } from 'components'
 @Component
 export default class DialogDemo extends Vue {
   render() {

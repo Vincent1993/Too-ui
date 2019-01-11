@@ -39,6 +39,7 @@ export default class Toast extends Modal {
     if (this.toastVisible && this.duration && !this.manualClose) {
       this.$_timer = setTimeout(() => {
         this.hide();
+
       }, this.duration);
     }
   }

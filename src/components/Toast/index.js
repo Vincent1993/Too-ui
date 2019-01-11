@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import ToastInstance from './toast';
-import './styles/index';
 
 const Toast = ({
   parentNode = document.body,
@@ -56,7 +55,7 @@ Toast.info = (content = '', duration = 3000, transparent = false) => {
 
 Toast.succeed = (content = '', duration = 3000, transparent = false) => {
   return Toast({
-    icon: 'check-circle',
+    icon: 'success-circle-fill',
     content,
     duration,
     transparent
@@ -65,7 +64,7 @@ Toast.succeed = (content = '', duration = 3000, transparent = false) => {
 
 Toast.fail = (content = '', duration = 3000, transparent = false) => {
   return Toast({
-    icon: 'times-circle',
+    icon: 'close-circle-fill',
     content,
     duration,
     transparent
@@ -75,8 +74,8 @@ Toast.fail = (content = '', duration = 3000, transparent = false) => {
 Toast.loading = (content = '', duration = 3000, transparent = false) => {
   return Toast({
     icon: 'spinner',
-    animate: 'spin',
     position: 'center',
+    manualClose: false,
     content,
     duration,
     transparent

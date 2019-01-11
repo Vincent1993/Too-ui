@@ -1,6 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { CellItem } from './index';
-import { Field } from '@/components/Field/';
+import { CellItem, Field } from 'components';
 
 @Component
 export default class CellItemDemo extends Vue {

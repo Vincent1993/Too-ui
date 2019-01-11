@@ -1,7 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Button from '../Button/';
-import Modal from './index';
-
+import { Modal, Button } from 'components'
 @Component
 export default class ModalDemo extends Vue {
   showModal1 = false;
