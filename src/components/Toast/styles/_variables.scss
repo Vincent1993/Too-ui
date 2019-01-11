@@ -1,0 +1,9 @@
+@import '~@/styles/base/variables.scss';
+@import '~@/styles/utilities/_mixins.scss';
+@import '~@/styles/utilities/helpers.scss';
+@import '~@/components/Modal/styles/_variables.scss';
+
+$toast-z: $modal-z + 5;
+$toast-content-z: $toast-z + 10;
+$toast-content-background: $bg5;
+$toast-border-radius: $radius-sm;

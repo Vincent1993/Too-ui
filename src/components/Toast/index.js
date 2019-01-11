@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import ToastInstance from './toast';
-import './toast.scss';
+import './styles/index';
 
 const Toast = ({
   parentNode = document.body,
   prefixCls = 'to-toast',
-  destroyOnClose = false,
+  destroyOnClose = true,
   transparent = true,
   ...restOptions
 }) => {
@@ -45,7 +45,7 @@ Toast.hide = () => {
   }
 };
 
-Toast.info = (content = '', duration = 3000, transparent = true) => {
+Toast.info = (content = '', duration = 3000, transparent = false) => {
   return Toast({
     icon: '',
     content,
@@ -54,7 +54,7 @@ Toast.info = (content = '', duration = 3000, transparent = true) => {
   });
 };
 
-Toast.succeed = (content = '', duration = 3000, transparent = true) => {
+Toast.succeed = (content = '', duration = 3000, transparent = false) => {
   return Toast({
     icon: 'check-circle',
     content,
@@ -63,7 +63,7 @@ Toast.succeed = (content = '', duration = 3000, transparent = true) => {
   });
 };
 
-Toast.fail = (content = '', duration = 3000, transparent = true) => {
+Toast.fail = (content = '', duration = 3000, transparent = false) => {
   return Toast({
     icon: 'times-circle',
     content,
@@ -72,10 +72,11 @@ Toast.fail = (content = '', duration = 3000, transparent = true) => {
   });
 };
 
-Toast.loading = (content = '', duration = 3000, transparent = true) => {
+Toast.loading = (content = '', duration = 3000, transparent = false) => {
   return Toast({
     icon: 'spinner',
     animate: 'spin',
+    position: 'center',
     content,
     duration,
     transparent

@@ -1,18 +1,18 @@
 import { Component } from 'vue-property-decorator';
 import PropTypes from 'vue-types';
-import classNames from 'classnames';
 import Modal from '../Modal/';
-import { FontAwesomeIcon } from '../Icon/';
+import { Icon } from '../Icon/';
 
 @Component({
   props: {
     duration: PropTypes.integer.def(3000),
-    icon: PropTypes.string.def(''),
+    icon: PropTypes.oneOfType([Object, String]).def(''),
     content: PropTypes.oneOfType([String, Object]),
     transparent: PropTypes.bool.def(true),
     onClose: PropTypes.func.def(() => {}),
     uid: PropTypes.number.def(Date.now()),
-    animate: PropTypes.oneOf(['spin', 'pulse'])
+    animate: PropTypes.oneOf(['spin', 'pulse']),
+    manualClose: PropTypes.bool.def(false)
   }
 })
 export default class Toast extends Modal {
@@ -36,7 +36,7 @@ export default class Toast extends Modal {
     if (this.$_timer) {
       clearTimeout(this.$_timer);
     }
-    if (this.toastVisible && this.duration) {
+    if (this.toastVisible && this.duration && !this.manualClose) {
       this.$_timer = setTimeout(() => {
         this.hide();
       }, this.duration);
@@ -50,12 +50,13 @@ export default class Toast extends Modal {
   }
   render() {
     return (
-      <div class={classNames(this.prefixCls, [this.position])} id={this.uid}>
+      <div class={[this.prefixCls, [this.position]]} id={this.uid}>
         <Modal
           ref="modal"
           visible={this.toastVisible}
           onHide={this.handleModalHide}
           transparent={this.transparent}
+          unclosableAnimated={false}
           closable={false}
           maskClosable={false}
           destroyOnClose
@@ -63,11 +64,25 @@ export default class Toast extends Modal {
           contentStyle={this.contentStyle}
         >
           {this.icon ? (
-            <span class={`${this.prefixCls}-icon`}>
-              <FontAwesomeIcon icon={this.icon} animate={this.animate} />
-            </span>
+            <div class={`${this.prefixCls}-icon`}>
+              <Icon
+                scriptUrl="http://at.alicdn.com/t/font_1011143_vmdzjzjf0q.js"
+                type={this.icon}
+                {...{ props: this.icon }}
+              />
+            </div>
           ) : null}
           <div class={`${this.prefixCls}-text`}>{this.content}</div>
+          {this.manualClose ? (
+            <div class={`${this.prefixCls}-close`} onClick={this.hide}>
+              <Icon
+                scriptUrl="http://at.alicdn.com/t/font_1011143_vmdzjzjf0q.js"
+                type="close-circle"
+                fill="#fff"
+                size="20"
+              />
+            </div>
+          ) : null}
         </Modal>
       </div>
     );

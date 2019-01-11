@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Button from '../Button/';
-import Toast from './toast';
+import Toast from './index';
 
 @Component
 export default class ToastDemo extends Vue {
@@ -12,9 +12,11 @@ export default class ToastDemo extends Vue {
             type="primary"
             onClick={() =>
               Toast({
-                icon: 'spinner',
+                icon: 'circle',
                 position: 'top',
-                content: '这是一条通知'
+                content: '这是一条通知',
+                duration: 0,
+                manualClose: true
               })
             }
           >
@@ -25,14 +27,15 @@ export default class ToastDemo extends Vue {
             onClick={() =>
               Toast.loading(
                 <div>
-                  这是一条通知222<Button type="primary" size="small">
+                  <Button type="primary" size="small">
                     botto
                   </Button>
-                </div>
+                </div>,
+                0
               )
             }
           >
-            bottom
+            loading
           </Button>
         </Button.Group>
       </div>

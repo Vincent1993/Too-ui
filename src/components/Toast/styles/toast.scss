@@ -1,0 +1,27 @@
+@import '_mixins.scss';
+
+.#{$prefix-name}-toast {
+  @include toast-content-base;
+
+  &.top {
+    .#{$prefix-name}-modal-content {
+      flex-direction: row;
+    }
+    .#{$prefix-name}-toast-icon {
+      margin-right: $h-spacing-md;
+      margin-bottom: 0;
+    }
+  }
+  &.bottom {
+    .#{$prefix-name}-modal-content {
+      bottom: 5%;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: $h-spacing-md;
+
+    color: $white;
+  }
+}

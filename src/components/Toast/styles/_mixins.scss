@@ -1,0 +1,22 @@
+@import '_variables.scss';
+
+@mixin toast-content-base {
+  &-icon {
+    margin-bottom: $h-spacing-md;
+
+    vertical-align: middle;
+  }
+  .#{$prefix-name}-modal {
+    &-content {
+      position: relative;
+
+      flex-direction: column;
+
+      min-width: 20vw;
+      padding: $v-spacing-md $h-spacing-lg;
+
+      color: $white;
+      background-color: $toast-content-background;
+    }
+  }
+}
