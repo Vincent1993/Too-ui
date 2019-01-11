@@ -1,5 +1,5 @@
 import Landscape from './landscape';
-import './landscape.scss';
+import './styles/index.js';
 
 export { Landscape };
 export default Landscape;

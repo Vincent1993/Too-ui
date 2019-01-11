@@ -1,0 +1,26 @@
+@import '_variables.scss';
+
+@mixin landscape-close-base {
+  &-close {
+    display: block;
+
+    text-align: center;
+
+    svg {
+      fill: map-get($landscape-close-fill, 'light');
+    }
+
+    &.dark svg {
+      fill: map-get($landscape-close-fill, 'dark');
+    }
+    &.bottom {
+      margin-top: 20px;
+    }
+    &.top-right {
+      margin-bottom: 20px;
+    }
+    &.top-right {
+      text-align: right;
+    }
+  }
+}

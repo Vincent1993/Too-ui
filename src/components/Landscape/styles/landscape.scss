@@ -1,0 +1,18 @@
+@import '_mixins.scss';
+
+.#{$prefix-name}-landscape {
+  @include landscape-close-base;
+  .#{$prefix-name}-modal-content {
+    position: relative;
+
+    width: 80vw;
+
+    background: transparent;
+  }
+  &-body {
+    position: relative;
+  }
+  &-content {
+    padding: $v-spacing-md $h-spacing-md;
+  }
+}
