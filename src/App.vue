@@ -1,18 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/elements/cell-item">CellItem</router-link> |
-      <router-link to="/elements/dialog">Dialog</router-link> |
-      <router-link to="/elements/modal">Modal</router-link> |
-      <router-link to="/elements/field">Field</router-link> |
-      <router-link to="/elements/toast">Toast</router-link> |
-      <router-link to="/elements/landscape">Landscape</router-link> |
-      <router-link to="/elements/switch">Switch</router-link> |
-      <router-link to="/elements/button">Button</router-link>
+      <router-link
+        :to="'/elements/' + component.name"
+        v-for="component in components"
+      >{{component.fileName}} | </router-link>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+import components from "@/components/components.json";
+export default {
+  data() {
+    return {
+      components
+    };
+  }
+};
+</script>
 
 <style lang="scss">
 @import "~@/styles/base/index.scss";
