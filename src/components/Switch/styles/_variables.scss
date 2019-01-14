@@ -1,10 +1,19 @@
 @import '~@/styles/themes/index.scss';
 @import '~@/styles/base/variables.scss';
 
-$switch-width: 45 * $hd;
-$switch-height: 24 * $hd;
-$switch-border-radius: $switch-height;
+$switch-width: 51 * $hd;
+$switch-height: 31 * $hd;
+$switch-radius: $switch-height / 2;
+
+$switch-handle-width: 28 * $hd;
+$switch-handle-height: 28 * $hd;
+$switch-handle-radius: $switch-handle-width;
+
+$switch-handle-edge-offset: 1.5 * $hd;
 
 $switch-fill-color: $gray40;
 $switch-fill-color-inverse: $white;
 $switch-active-fill-color: $to-theme-brand;
+
+$switch-shadow: -1px 2px 2px 0 rgba(0, 0, 0, .1),
+  0 2px 11.5px 0 rgba(0, 0, 0, .08), 0 0 2px 0 rgba(0, 0, 0, .2);

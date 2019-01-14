@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link
+        :key="component.name"
         :to="'/elements/' + component.name"
         v-for="component in components"
       >{{component.fileName}} | </router-link>
@@ -21,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/styles/base/index.scss";
+@import '~@/styles/base/index.scss';
 .demo-container {
   padding: 10px;
   &.full-width {
@@ -50,4 +51,5 @@ body {
     }
   }
 }
+
 </style>

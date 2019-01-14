@@ -9,7 +9,7 @@
 
   transition: .15s background ease-out;
 
-  border-radius: $switch-border-radius;
+  border-radius: $switch-radius;
   background: $switch-fill-color;
   &:before,
   &:after {
@@ -21,36 +21,39 @@
     top: 0;
     left: 0;
 
-    width: $switch-width / 2;
+    width: $switch-width;
     height: $switch-height;
 
-    border-radius: $switch-border-radius;
+    border-radius: $switch-radius;
     background-color: $switch-fill-color;
   }
   &:after {
-    top: 2px;
-    left: 2px;
+    top: $switch-handle-edge-offset;
+    left: $switch-handle-edge-offset;
 
-    width: ($switch-width / 2) - 4;
-    height: $switch-height - 4;
+    width: $switch-handle-width;
+    height: $switch-handle-height;
 
     transition: transform .3s;
 
-    border-radius: 50%;
+    border-radius: $switch-handle-radius;
     background-color: $switch-fill-color-inverse;
+    box-shadow: $switch-shadow;
   }
 }
 
 @mixin switch-active-base {
   &.active {
-    background: $switch-active-fill-color;
+    background-color: $switch-active-fill-color;
 
     &:before,
     &:after {
       background-color: $switch-fill-color-inverse;
     }
     &:after {
-      transform: translateX(($switch-width / 2) - 2);
+      transform: translateX(
+      ($switch-width - $switch-handle-width) - $switch-handle-edge-offset * 2
+      );
     }
     &:before {
       transform: scale(0);
