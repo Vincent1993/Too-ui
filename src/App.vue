@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import components from "@/components/components.json";
+import components from "./components/components.json";
 export default {
   data() {
     return {
