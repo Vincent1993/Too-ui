@@ -1,0 +1,28 @@
+$hd: 1px;
+$prefix-name: 'to';
+
+// Border
+$border-width-base: 2 * $hd;
+$border-color-base: #e2e4ea;
+
+// Raidus
+$radius-xs: 2 * $hd;
+$radius-sm: 3 * $hd;
+$radius-md: 5 * $hd;
+$radius-lg: 7 * $hd;
+$radius-round: 100px;
+$radius-circle: 290486px;
+
+// Spacing
+$h-spacing-sm: 5 * $hd;
+$h-spacing-md: 8 * $hd;
+$h-spacing-lg: 15 * $hd;
+
+$v-spacing-xs: 3 * $hd;
+$v-spacing-sm: 6 * $hd;
+$v-spacing-md: 9 * $hd;
+$v-spacing-lg: 15 * $hd;
+$v-spacing-xl: 21 * $hd;
+
+// Shadow
+$shadow-base: 0 2px 3px rgba(#000, .1), 0 0 0 1px rgba(#000, .1);

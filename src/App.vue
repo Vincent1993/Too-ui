@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss">
 @import '~@/styles/base/index.scss';
+@import '~@/styles/utilities/_functions.scss';
 .demo-container {
   padding: 10px;
   &.full-width {
@@ -30,12 +31,12 @@ export default {
   }
 }
 body {
-  font-family: $family-sans-serif;
+  font-family: $typography-font-family;
 
-  background-color: #f5f5f9;
+  background-color: get-theme-prop('background', 'base');
 }
 #app {
-  color: #2c3e50;
+  color: get-theme-prop('text', 'base');
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,11 +44,11 @@ body {
 #nav {
   padding: 30px;
   a {
-    font-weight: bold;
-
-    color: #2c3e50;
+    color: get-theme-prop('text', 'base');
     &.router-link-exact-active {
-      color: #42b983;
+      font-weight: bold;
+
+      color: get-theme-prop('text', 'link');
     }
   }
 }

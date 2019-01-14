@@ -1,6 +1,6 @@
-@import '~@/styles/base/variables.scss';
+@import '~@/styles/themes/index.scss';
 @import '~@/styles/utilities/_mixins.scss';
-@import '~@/styles/utilities/helpers.scss';
+@import '~@/styles/utilities/_helpers.scss';
 @import '~@/components/Modal/styles/_variables.scss';
 
 $toast-z: $modal-z + 5;
