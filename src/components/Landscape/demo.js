@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Button, Landscape } from 'components'
+import { Button, Landscape } from 'components';
 @Component
 export default class LandscapeDemo extends Vue {
   showLandscape = false;

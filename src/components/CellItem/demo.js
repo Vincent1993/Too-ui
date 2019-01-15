@@ -14,17 +14,12 @@ export default class CellItemDemo extends Vue {
               width: '48px',
               height: '48px',
               borderRadius: '100%',
-              background: '#ddd'
+              background: '#ddd',
             }}
           />
         </CellItem>
 
-        <CellItem
-          title="标题内容"
-          brief="展示摘要描述"
-          addon="额外描述"
-          disabled
-        >
+        <CellItem title="标题内容" brief="展示摘要描述" addon="额外描述" disabled>
           <span
             slot="prefix"
             style={{
@@ -32,7 +27,7 @@ export default class CellItemDemo extends Vue {
               width: '48px',
               height: '48px',
               borderRadius: '100%',
-              background: '#ddd'
+              background: '#ddd',
             }}
           />
         </CellItem>
@@ -43,7 +38,7 @@ export default class CellItemDemo extends Vue {
               display: 'block',
               width: '12px',
               height: '12px',
-              background: '#f3f3f3'
+              background: '#f3f3f3',
             }}
           />
         </CellItem>

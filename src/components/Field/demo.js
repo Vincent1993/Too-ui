@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Field, CellItem } from 'components'
+import { Field, CellItem } from 'components';
 @Component
 export default class FieldDemo extends Vue {
   render() {
@@ -14,7 +14,7 @@ export default class FieldDemo extends Vue {
                 width: '48px',
                 height: '48px',
                 borderRadius: '100%',
-                background: '#ddd'
+                background: '#ddd',
               }}
             />
           </CellItem>
@@ -26,16 +26,12 @@ export default class FieldDemo extends Vue {
                 width: '48px',
                 height: '48px',
                 borderRadius: '100%',
-                background: '#ddd'
+                background: '#ddd',
               }}
             />
           </CellItem>
         </Field>
-        <Field
-          title="field Title2"
-          brief="field breif2"
-          style="margin-top: 5px;"
-        >
+        <Field title="field Title2" brief="field breif2" style="margin-top: 5px;">
           <CellItem title="标题内容" brief="展示摘要描述" addon="额外描述">
             <span
               slot="prefix"
@@ -44,7 +40,7 @@ export default class FieldDemo extends Vue {
                 width: '48px',
                 height: '48px',
                 borderRadius: '100%',
-                background: '#ddd'
+                background: '#ddd',
               }}
             />
           </CellItem>

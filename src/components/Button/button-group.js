@@ -4,8 +4,8 @@ import PropTypes from 'vue-types';
   props: {
     sticky: PropTypes.bool.def(false),
     inline: PropTypes.bool.def(false),
-    addons: PropTypes.bool.def(false)
-  }
+    addons: PropTypes.bool.def(false),
+  },
 })
 class ButtonGroup extends Vue {
   get classes() {
@@ -13,7 +13,7 @@ class ButtonGroup extends Vue {
       'button-group': true,
       sticky: this.sticky,
       inline: this.inline,
-      addons: this.addons
+      addons: this.addons,
     };
   }
   render() {

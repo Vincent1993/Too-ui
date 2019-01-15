@@ -5,8 +5,8 @@ import PropTypes from 'vue-types';
   props: {
     prefixCls: PropTypes.string.def('to-switch'),
     value: PropTypes.bool.def(false),
-    disabled: PropTypes.bool.def(false)
-  }
+    disabled: PropTypes.bool.def(false),
+  },
 })
 export default class ToSwitch extends Vue {
   onChange(e) {

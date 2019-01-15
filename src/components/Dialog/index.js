@@ -12,7 +12,7 @@ const generate = ({
   closable = false,
   buttons = [],
   parentNode = document.body,
-  destroyOnClose = true
+  destroyOnClose = true,
 }) => {
   const DialogConstructor = Vue.extend(Dialog);
   const vm = new DialogConstructor({
@@ -23,8 +23,8 @@ const generate = ({
       content,
       closable,
       buttons,
-      destroyOnClose
-    }
+      destroyOnClose,
+    },
   }).$mount();
   if (!vm.$el.parentNode) {
     parentNode.appendChild(vm.$el);
@@ -57,7 +57,7 @@ Dialog.confirm = ({
   onConfirm = noop,
   onCancel = noop,
   confirmButtonProps = {},
-  cancelButtonProps = {}
+  cancelButtonProps = {},
 }) => {
   const vm = generate({
     title,
@@ -70,16 +70,16 @@ Dialog.confirm = ({
         handler: onCancel,
         type: 'secondary',
         outline: true,
-        ...cancelButtonProps
+        ...cancelButtonProps,
       },
       {
         content: confirmText,
         type: 'primary',
         outline: true,
         handler: onConfirm,
-        ...confirmButtonProps
-      }
-    ]
+        ...confirmButtonProps,
+      },
+    ],
   });
 
   return vm;
@@ -92,7 +92,7 @@ Dialog.alert = ({
   confirmText = '确定',
   closable = false,
   onConfirm = noop,
-  confirmButtonProps = {}
+  confirmButtonProps = {},
 }) => {
   const vm = generate({
     title,
@@ -105,9 +105,9 @@ Dialog.alert = ({
         type: 'primary',
         outline: true,
         handler: onConfirm,
-        ...confirmButtonProps
-      }
-    ]
+        ...confirmButtonProps,
+      },
+    ],
   });
 
   return vm;
@@ -117,14 +117,14 @@ Dialog.warn = props => {
   return Dialog.alert({
     ...props,
     icon: 'warn-circle-fill',
-    confirmButtonProps: { type: 'default' }
+    confirmButtonProps: { type: 'default' },
   });
 };
 
 Dialog.succeed = props => {
   return Dialog.alert({
     ...props,
-    icon: { type: 'success-circle-fill', fill: '#75c940' }
+    icon: { type: 'success-circle-fill', fill: '#75c940' },
   });
 };
 
@@ -133,9 +133,9 @@ Dialog.failed = props => {
     ...props,
     icon: {
       type: 'close-cirlce',
-      fill: '#ff4f3e'
+      fill: '#ff4f3e',
     },
-    confirmButtonProps: { type: 'default' }
+    confirmButtonProps: { type: 'default' },
   });
 };
 

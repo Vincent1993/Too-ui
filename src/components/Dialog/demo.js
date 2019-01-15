@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Dialog, Button } from 'components'
+import { Dialog, Button } from 'components';
 @Component
 export default class DialogDemo extends Vue {
   render() {
@@ -10,7 +10,7 @@ export default class DialogDemo extends Vue {
             onClick={() =>
               Dialog.confirm({
                 title: '确认提示框',
-                content: '确认要取消了?'
+                content: '确认要取消了?',
               })
             }
           >
@@ -21,7 +21,7 @@ export default class DialogDemo extends Vue {
             onClick={() =>
               Dialog.succeed({
                 title: '确认提示框',
-                content: '确认要取消了?'
+                content: '确认要取消了?',
               })
             }
           >
@@ -32,7 +32,7 @@ export default class DialogDemo extends Vue {
             onClick={() =>
               Dialog.failed({
                 title: '确认提示框',
-                content: '确认要取消了?'
+                content: '确认要取消了?',
               })
             }
           >
@@ -43,7 +43,7 @@ export default class DialogDemo extends Vue {
             onClick={() =>
               Dialog.warn({
                 title: '确认提示框',
-                content: '确认要取消了?'
+                content: '确认要取消了?',
               })
             }
           >

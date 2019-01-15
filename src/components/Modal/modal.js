@@ -14,11 +14,9 @@ import { addClass, removeClass } from '../_util/dom';
     maskStyle: PropTypes.object,
     transparent: PropTypes.bool.def(false),
     destroyOnClose: PropTypes.bool.def(true),
-    position: PropTypes.oneOf(['center', 'left', 'right', 'bottom', 'top']).def(
-      'center'
-    ),
-    unclosableAnimated: PropTypes.bool.def(true)
-  }
+    position: PropTypes.oneOf(['center', 'left', 'right', 'bottom', 'top']).def('center'),
+    unclosableAnimated: PropTypes.bool.def(true),
+  },
 })
 export default class Modal extends Vue {
   modalShow = false;
@@ -29,12 +27,12 @@ export default class Modal extends Vue {
     return {
       style: {
         display: modalShow ? 'flex' : 'none',
-        ...wrapStyle
+        ...wrapStyle,
       },
       class: {
         [prefixCls]: true,
-        [`${prefixCls}--${position}`]: true
-      }
+        [`${prefixCls}--${position}`]: true,
+      },
     };
   }
 
@@ -43,7 +41,7 @@ export default class Modal extends Vue {
 
     return {
       style: { display: transparent ? 'none' : 'block', ...maskStyle },
-      class: { [`${prefixCls}-mask`]: true }
+      class: { [`${prefixCls}-mask`]: true },
     };
   }
 
@@ -51,7 +49,7 @@ export default class Modal extends Vue {
     const { prefixCls, contentStyle } = this;
     return {
       style: { ...contentStyle },
-      class: { [`${prefixCls}-content`]: true }
+      class: { [`${prefixCls}-content`]: true },
     };
   }
 
@@ -133,10 +131,7 @@ export default class Modal extends Vue {
           ) : null}
         </transition>
 
-        <transition
-          name={this.animateType}
-          onAfterLeave={this.afterModalContentClose}
-        >
+        <transition name={this.animateType} onAfterLeave={this.afterModalContentClose}>
           {this.modalContentShow ? (
             <div {...this.contentAttributes}>{this.$slots.default}</div>
           ) : null}

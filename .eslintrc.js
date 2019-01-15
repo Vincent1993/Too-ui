@@ -14,4 +14,16 @@ module.exports = {
   rules: {
     quotes: [2, 'single', { avoidEscape: true }],
   },
+  overrides: [
+    {
+      files: ['src/components/**/*.js'],
+      excludedFiles: [
+        '.eslintrc.js',
+        'commitlint.config.js',
+        'vue.config.js',
+        'tsconfig.json',
+        'index.js',
+      ],
+    },
+  ],
 };

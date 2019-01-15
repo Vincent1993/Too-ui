@@ -18,8 +18,8 @@ const Toast = ({
         prefixCls,
         destroyOnClose,
         transparent,
-        ...restOptions
-      }
+        ...restOptions,
+      },
     }).$mount();
   }
 
@@ -49,7 +49,7 @@ Toast.info = (content = '', duration = 3000, transparent = false) => {
     icon: '',
     content,
     duration,
-    transparent
+    transparent,
   });
 };
 
@@ -58,7 +58,7 @@ Toast.succeed = (content = '', duration = 3000, transparent = false) => {
     icon: 'success-circle-fill',
     content,
     duration,
-    transparent
+    transparent,
   });
 };
 
@@ -67,7 +67,7 @@ Toast.fail = (content = '', duration = 3000, transparent = false) => {
     icon: 'close-circle-fill',
     content,
     duration,
-    transparent
+    transparent,
   });
 };
 
@@ -78,7 +78,7 @@ Toast.loading = (content = '', duration = 3000, transparent = false) => {
     manualClose: false,
     content,
     duration,
-    transparent
+    transparent,
   });
 };
 

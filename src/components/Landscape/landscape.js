@@ -9,8 +9,8 @@ import { Icon } from '../Icon';
     value: PropTypes.bool.def(false),
     maskClosable: PropTypes.bool.def(true),
     transparent: PropTypes.bool.def(false),
-    closePosition: PropTypes.oneOf(['bottom', 'top-right']).def('bottom')
-  }
+    closePosition: PropTypes.oneOf(['bottom', 'top-right']).def('bottom'),
+  },
 })
 export default class Landscape extends Vue {
   landscapeVisible = this.value;
@@ -41,7 +41,7 @@ export default class Landscape extends Vue {
                 class={[
                   `${this.prefixCls}-close`,
                   this.closePosition,
-                  this.transparent ? 'dark' : ''
+                  this.transparent ? 'dark' : '',
                 ]}
                 scriptUrl="http://at.alicdn.com/t/font_1011143_vmdzjzjf0q.js"
                 type="close-circle"
@@ -55,7 +55,7 @@ export default class Landscape extends Vue {
                 class={[
                   `${this.prefixCls}-close`,
                   this.closePosition,
-                  this.transparent ? 'dark' : ''
+                  this.transparent ? 'dark' : '',
                 ]}
                 scriptUrl="http://at.alicdn.com/t/font_1011143_vmdzjzjf0q.js"
                 type="close-circle"

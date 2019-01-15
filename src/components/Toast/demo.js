@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { Button, Toast } from 'components'
+import { Button, Toast } from 'components';
 
 @Component
 export default class ToastDemo extends Vue {
@@ -15,7 +15,7 @@ export default class ToastDemo extends Vue {
                 position: 'top',
                 content: '这是一条通知',
                 duration: 0,
-                manualClose: true
+                manualClose: true,
               })
             }
           >
@@ -29,7 +29,7 @@ export default class ToastDemo extends Vue {
                   <Button type="primary" size="small">
                     botto
                   </Button>
-                </div>
+                </div>,
               )
             }
           >

@@ -1,7 +1,7 @@
 //  https://github.com/benjycui/omit.js
 function omit(obj, fields) {
   const shallowCopy = {
-    ...obj
+    ...obj,
   };
   for (let i = 0; i < fields.length; i++) {
     const key = fields[i];

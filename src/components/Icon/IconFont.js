@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  functional: true
+  functional: true,
 })
 export default class Icon extends Vue {
   render(createElement, context) {
@@ -29,16 +29,10 @@ export default class Icon extends Vue {
           viewBox: '0 0 1024 1024',
           height: '1em',
           width: '1em',
-          ...restAttrs
-        }
+          ...restAttrs,
+        },
       },
-      [
-        createElement(
-          'use',
-          { attrs: { href: `#icon-${type}` } },
-          context.children
-        )
-      ]
+      [createElement('use', { attrs: { href: `#icon-${type}` } }, context.children)],
     );
   }
 }

@@ -12,8 +12,8 @@ import { Icon } from '../Icon/';
     onClose: PropTypes.func.def(() => {}),
     uid: PropTypes.number.def(Date.now()),
     animate: PropTypes.oneOf(['spin', 'pulse']),
-    manualClose: PropTypes.bool.def(false)
-  }
+    manualClose: PropTypes.bool.def(false),
+  },
 })
 export default class Toast extends Modal {
   toastVisible = false;
@@ -39,7 +39,6 @@ export default class Toast extends Modal {
     if (this.toastVisible && this.duration && !this.manualClose) {
       this.$_timer = setTimeout(() => {
         this.hide();
-
       }, this.duration);
     }
   }

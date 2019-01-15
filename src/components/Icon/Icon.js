@@ -12,8 +12,8 @@ import IconFont from './IconFont';
     style: PropTypes.oneOfType([Object, String]).def({}),
     fill: PropTypes.string.def('currentColor'),
     size: PropTypes.oneOfType([String, Number]).def(30),
-    scriptUrl: PropTypes.string
-  }
+    scriptUrl: PropTypes.string,
+  },
 })
 export default class Icon extends Vue {
   render(_, context) {
@@ -25,21 +25,16 @@ export default class Icon extends Vue {
       scriptUrl,
       type,
       size,
-      onClick,
       ...restProps
     } = context.props;
 
     const computedClassName = {
       [prefixCls]: true,
       [className]: !!className,
-      spin: spin
+      spin: spin,
     };
     return (
-      <i
-        {...context.data}
-        class={computedClassName}
-        style={{ ...style, fontSize: `${size}px` }}
-      >
+      <i {...context.data} class={computedClassName} style={{ ...style, fontSize: `${size}px` }}>
         <IconFont scriptUrl={scriptUrl} type={type} {...{ attrs: restProps }} />
       </i>
     );

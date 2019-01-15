@@ -9,13 +9,13 @@ import PropTypes from 'vue-types';
     addon: PropTypes.string.def(''),
     arrow: PropTypes.bool.def(false),
     disabled: PropTypes.bool.def(false),
-    noBorder: PropTypes.bool.def(false)
-  }
+    noBorder: PropTypes.bool.def(false),
+  },
 })
 export default class CellItem extends Vue {
   get classes() {
     return {
-      [this.prefixCls]: true
+      [this.prefixCls]: true,
     };
   }
 
@@ -32,18 +32,13 @@ export default class CellItem extends Vue {
 
   get addonRender() {
     return this.addon || this.$slots.right ? (
-      <div
-        class={`${this.prefixCls}-addon`}
-        domPropsInnerHTML={this.addon || this.$slot.right}
-      />
+      <div class={`${this.prefixCls}-addon`} domPropsInnerHTML={this.addon || this.$slot.right} />
     ) : null;
   }
   get mainRender() {
     return this.title || this.briefRender || this.$slots.default ? (
       <div class={[`${this.prefixCls}-content`]}>
-        {this.title ? (
-          <p class={`${this.prefixCls}-title`} domPropsInnerHTML={this.title} />
-        ) : null}
+        {this.title ? <p class={`${this.prefixCls}-title`} domPropsInnerHTML={this.title} /> : null}
         {this.briefRender}
         {this.$slots.default}
       </div>
@@ -56,16 +51,12 @@ export default class CellItem extends Vue {
   }
   render() {
     return (
-      <div
-        class={this.classes}
-        onClick={this.clickHandler}
-        disabled={this.disabled}
-      >
+      <div class={this.classes} onClick={this.clickHandler} disabled={this.disabled}>
         <div
           class={{
             [`${this.prefixCls}-body`]: true,
             mutiline: this.briefRender,
-            'no-border': this.noBorder
+            'no-border': this.noBorder,
           }}
         >
           {this.prefixRender}

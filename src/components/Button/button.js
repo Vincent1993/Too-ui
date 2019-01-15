@@ -3,9 +3,7 @@ import PropTypes from 'vue-types';
 
 @Component({
   props: {
-    type: PropTypes.oneOf(['primary', 'warn', 'error', 'secondary']).def(
-      'primary'
-    ),
+    type: PropTypes.oneOf(['primary', 'warn', 'error', 'secondary']).def('primary'),
     prefixCls: PropTypes.string.def('to-button'),
     size: PropTypes.oneOf(['small', 'medium']).def('medium'),
     subtle: PropTypes.bool.def(false),
@@ -16,8 +14,8 @@ import PropTypes from 'vue-types';
     sticky: PropTypes.bool.def(false),
     round: PropTypes.bool.def(false),
     loading: PropTypes.bool.def(false),
-    block: PropTypes.bool.def(false)
-  }
+    block: PropTypes.bool.def(false),
+  },
 })
 class Button extends Vue {
   get classes() {
@@ -33,7 +31,7 @@ class Button extends Vue {
       loading: this.loading,
       block: this.block,
       inactive: this.inactive,
-      disabled: this.disabled
+      disabled: this.disabled,
     };
   }
 

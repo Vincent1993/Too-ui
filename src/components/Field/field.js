@@ -8,8 +8,8 @@ import PropTypes from 'vue-types';
     brief: PropTypes.oneOfType([Object, String]).def(''),
     footer: PropTypes.oneOfType([Object, String]).def(''),
     disabled: PropTypes.bool.def(false),
-    fullWidth: PropTypes.bool.def(false)
-  }
+    fullWidth: PropTypes.bool.def(false),
+  },
 })
 export default class Field extends Vue {
   get headerRender() {
@@ -31,9 +31,7 @@ export default class Field extends Vue {
   // slot's footer weight bigger than props's footer
   get footerRender() {
     return this.$slots.footer || this.$props.footer ? (
-      <footer class={`${this.prefixCls}-footer`}>
-        {this.$slots.footer || this.$props.footer}
-      </footer>
+      <footer class={`${this.prefixCls}-footer`}>{this.$slots.footer || this.$props.footer}</footer>
     ) : null;
   }
 

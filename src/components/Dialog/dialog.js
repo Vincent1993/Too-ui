@@ -13,8 +13,8 @@ import omit from '../_util/omit';
     icon: PropTypes.oneOfType([String, Object]).def(''),
     content: PropTypes.oneOfType([String, Object]).def(''),
     buttons: PropTypes.array.isRequired,
-    closable: PropTypes.bool.def(true)
-  }
+    closable: PropTypes.bool.def(true),
+  },
 })
 export default class Dialog extends Modal {
   dialogShow = this.value;
@@ -34,17 +34,10 @@ export default class Dialog extends Modal {
           onHide={this.handleDialogHide}
           {...{
             props: {
-              ...omit(this.$props, [
-                'prefixCls',
-                'title',
-                'value',
-                'buttons',
-                'icon',
-                'content'
-              ]),
+              ...omit(this.$props, ['prefixCls', 'title', 'value', 'buttons', 'icon', 'content']),
               maskClosable: false,
-              visible: this.dialogShow
-            }
+              visible: this.dialogShow,
+            },
           }}
         >
           <div class={`${this.prefixCls}-content`}>
@@ -58,12 +51,8 @@ export default class Dialog extends Modal {
                   />
                 </span>
               ) : null}
-              <h2 class={`${this.prefixCls}-title`}>
-                {this.title || this.$slots.title}
-              </h2>
-              <div class={`${this.prefixCls}-text`}>
-                {this.content || this.$slots.default}
-              </div>
+              <h2 class={`${this.prefixCls}-title`}>{this.title || this.$slots.title}</h2>
+              <div class={`${this.prefixCls}-text`}>{this.content || this.$slots.default}</div>
             </div>
             <footer class={`${this.prefixCls}-footer`}>
               <Button.Group addons>
