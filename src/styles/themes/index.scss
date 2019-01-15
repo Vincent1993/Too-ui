@@ -1,17 +1,17 @@
-@import './_colors-palette.scss';
-@import '_light.scss';
-@import '_dark.scss';
-@import '_variables.scss';
-@import '../typography/_variables.scss';
+@import './colors-palette';
+@import 'light';
+@import 'dark';
+@import 'variables';
+@import '../typography/variables';
 
 $to-theme-brand: $green50;
 $to-theme-map: (
   light: (
     text: $light-theme-text-colors,
-    background: $light-theme-background-colors
+    background: $light-theme-background-colors,
   ),
   dark: (
     text: $dark-theme-text-colors,
-    background: $dark-theme-background-colors
-  )
+    background: $dark-theme-background-colors,
+  ),
 );

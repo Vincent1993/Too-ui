@@ -1,16 +1,16 @@
-@import './_colors-palette.scss';
+@import './colors-palette';
 
 $dark-theme-text-colors: (
   base: $white,
-  secondary: rgba($white, .7),
-  placeholder: rgba($white, .3),
-  disabled: rgba($white, .5),
+  secondary: rgba($white, 0.7),
+  placeholder: rgba($white, 0.3),
+  disabled: rgba($white, 0.5),
   link: $blue50,
   caption: $white,
   body: $white,
-  inverse: $black50
+  inverse: $black50,
 ) !default;
 
 $dark-theme-background-colors: (
-  base: $bg-black
+  base: $bg-black,
 ) !default;

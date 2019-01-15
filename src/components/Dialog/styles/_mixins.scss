@@ -1,6 +1,6 @@
-@import '~@/styles/typography/_mixins.scss';
-@import '~@/styles/utilities/_functions.scss';
-@import '~@/styles/utilities/_mixins.scss';
+@import '~@/styles/typography/mixins';
+@import '~@/styles/utilities/functions';
+@import '~@/styles/utilities/mixins';
 
 @mixin dialog-title-base() {
   &-title {
@@ -54,7 +54,7 @@
 
     position: relative;
     .#{$prefix-name}-button {
-      @include hairlineRemove;
+      @include hairline-remove;
 
       font-size: 1rem;
 

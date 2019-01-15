@@ -2,13 +2,13 @@ $light-theme-text-colors: (
   base: $black70,
   secondary: $gray50,
   placeholder: $gray30,
-  disabled: rgba($black20, .3),
+  disabled: rgba($black20, 0.3),
   link: $blue50,
   caption: $black40,
   body: $black70,
-  inverse: $white
+  inverse: $white,
 ) !default;
 
 $light-theme-background-colors: (
-  base: $bg-white
+  base: $bg-white,
 ) !default;

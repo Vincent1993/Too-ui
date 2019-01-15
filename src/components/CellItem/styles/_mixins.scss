@@ -1,6 +1,6 @@
-@import '~@/styles/utilities/_mixins';
-@import '~@/styles/typography/_mixins.scss';
-@import './_variables.scss';
+@import '~@/styles/utilities/mixins';
+@import '~@/styles/typography/mixins';
+@import './variables';
 
 @mixin cell-item-text-color-fill($type) {
   &:not([disabled]) {
@@ -14,7 +14,7 @@
   position: relative;
 
   &[disabled] {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
@@ -37,7 +37,7 @@
     padding: $v-spacing-md + 2 0;
   }
   &.no-border {
-    @include hairlineRemove('bottom');
+    @include hairline-remove('bottom');
   }
 }
 

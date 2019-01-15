@@ -1,4 +1,4 @@
-@import '~@/styles/themes/index.scss';
+@import '~@/styles/themes/index';
 
 $switch-width: 51 * $hd;
 $switch-height: 31 * $hd;
@@ -14,5 +14,5 @@ $switch-fill-color: $gray40;
 $switch-fill-color-inverse: $white;
 $switch-active-fill-color: $to-theme-brand;
 
-$switch-shadow: -1px 2px 2px 0 rgba(0, 0, 0, .1),
-  0 2px 11.5px 0 rgba(0, 0, 0, .08), 0 0 2px 0 rgba(0, 0, 0, .2);
+$switch-shadow: -1px 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 11.5px 0 rgba(0, 0, 0, 0.08),
+  0 0 2px 0 rgba(0, 0, 0, 0.2);

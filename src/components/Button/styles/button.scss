@@ -1,5 +1,5 @@
-@import './_mixins.scss';
-@import './_variables.scss';
+@import './mixins';
+@import './variables';
 
 .#{$prefix-name}-button {
   @include button-base;
@@ -13,33 +13,23 @@
   // Type map for primary, sencodary, warn, error
   @each $key in map-keys($button-color-map) {
     &.#{$key} {
-      @include button-container-fill-color(
-        map-get(map-get($button-color-map, $key), 'fill-color')
-      );
-      @include button-text-color(
-        map-get(map-get($button-color-map, $key), 'text-color')
-      );
-      @include button-border(
-        map-get(map-get($button-color-map, $key), 'border-color')
-      );
+      @include button-container-fill-color(map-get(map-get($button-color-map, $key), 'fill-color'));
+      @include button-text-color(map-get(map-get($button-color-map, $key), 'text-color'));
+      @include button-border(map-get(map-get($button-color-map, $key), 'border-color'));
       @include button-container-tab-fill-color(
         map-get(map-get($button-color-map, $key), 'tap-fill-color')
       );
 
       // Outline button
       &.outline {
-        @include button-outline(
-          map-get(map-get($button-color-map, $key), 'border-color')
-        );
+        @include button-outline(map-get(map-get($button-color-map, $key), 'border-color'));
         @include button-container-tab-fill-color(
           map-get(map-get($button-color-map, $key), 'tap-fill-color')
         );
       }
       // Without border & background-fill button
       &.subtle {
-        @include button-subtle(
-          map-get(map-get($button-color-map, $key), 'fill-color')
-        );
+        @include button-subtle(map-get(map-get($button-color-map, $key), 'fill-color'));
         @include button-container-tab-fill-color(
           map-get(map-get($button-color-map, $key), 'tap-fill-color')
         );

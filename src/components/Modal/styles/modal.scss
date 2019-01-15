@@ -1,5 +1,5 @@
-@import '_mixins.scss';
-@import '~@/styles/utilities/animations.scss';
+@import 'mixins';
+@import '~@/styles/utilities/animations';
 
 .#{$prefix-name}-modal {
   @include modal-base;

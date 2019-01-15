@@ -1,4 +1,4 @@
-@import '~@/styles/themes/index.scss';
+@import '~@/styles/themes/index';
 
 .#{$prefix-name}-icon {
   line-height: 0;
@@ -7,7 +7,7 @@
 
   text-align: center;
   text-transform: none;
-  & > * {
+  * {
     line-height: 1;
   }
   svg {

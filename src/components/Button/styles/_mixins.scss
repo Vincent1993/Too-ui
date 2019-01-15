@@ -1,9 +1,9 @@
-@import './_variables.scss';
+@import './variables';
 
 // Button base
 @mixin button-base() {
   @include set-typography(button);
-  @include txtOverflow();
+  @include txt-overflow();
 
   position: relative;
 
@@ -13,7 +13,7 @@
 
   cursor: pointer;
   user-select: none;
-  transition: all .3s;
+  transition: all 0.3s;
   vertical-align: middle;
 
   border-radius: $button-border-radius;
@@ -25,19 +25,19 @@
   -webkit-tap-highlight-color: transparent;
   &[disabled] {
     @include theme-prop(
-    'background-color',
-    map-get(map-get($button-color-map, 'disabled'), 'fill-color')
+      'background-color',
+      map-get(map-get($button-color-map, 'disabled'), 'fill-color')
     );
     @include hairline(
-    'all',
-    map-get(map-get($button-color-map, 'disabled'), 'border-color'),
-    $button-border-radius
+      'all',
+      map-get(map-get($button-color-map, 'disabled'), 'border-color'),
+      $button-border-radius
     );
 
     cursor: not-allowed;
     pointer-events: none;
 
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
@@ -83,7 +83,7 @@
   padding: 0 map-get(map-get($button-size-map, $size), 'padding');
 }
 @mixin button-subtle($color) {
-  @include hairlineRemove;
+  @include hairline-remove;
   @include button-container-fill-color(transparent);
   @include button-text-color($color);
 }
@@ -92,7 +92,7 @@
   &.#{$prefix-name}-button {
     @include button-text-color(transparent);
   }
-  &:before {
+  &::before {
     @include center(1em);
     @include loading;
 
@@ -101,7 +101,7 @@
 }
 
 @mixin button-inactive {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 @mixin button-round {
@@ -109,7 +109,7 @@
 }
 @mixin button-sticky {
   &.sticky {
-    @include hairlineRemove;
+    @include hairline-remove;
 
     position: fixed;
     bottom: 0;
@@ -130,7 +130,7 @@
 
   width: 100%;
   .#{$prefix-name}-button {
-    @include hairlineRemove;
+    @include hairline-remove;
 
     flex: 1;
 

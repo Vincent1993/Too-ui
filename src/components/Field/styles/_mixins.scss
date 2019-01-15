@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 @mixin field-text-fill($type) {
   &:not([disabled]) {
@@ -37,7 +37,7 @@
 }
 @mixin field-disabled-base {
   &[disabled] {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 

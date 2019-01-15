@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 @mixin switch-base {
   position: relative;
@@ -7,17 +7,17 @@
   width: $switch-width;
   height: $switch-height;
 
-  transition: .15s background ease-out;
+  transition: 0.15s background ease-out;
 
   border-radius: $switch-radius;
   background: $switch-fill-color;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     position: absolute;
 
     content: '';
   }
-  &:before {
+  &::before {
     top: 0;
     left: 0;
 
@@ -27,14 +27,14 @@
     border-radius: $switch-radius;
     background-color: $switch-fill-color;
   }
-  &:after {
+  &::after {
     top: $switch-handle-edge-offset;
     left: $switch-handle-edge-offset;
 
     width: $switch-handle-width;
     height: $switch-handle-height;
 
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     border-radius: $switch-handle-radius;
     background-color: $switch-fill-color-inverse;
@@ -46,16 +46,16 @@
   &.active {
     background-color: $switch-active-fill-color;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background-color: $switch-fill-color-inverse;
     }
-    &:after {
+    &::after {
       transform: translateX(
-      ($switch-width - $switch-handle-width) - $switch-handle-edge-offset * 2
+        ($switch-width - $switch-handle-width) - $switch-handle-edge-offset * 2
       );
     }
-    &:before {
+    &::before {
       transform: scale(0);
     }
   }
@@ -63,6 +63,6 @@
 
 @mixin switch-disabled-base {
   &[disabled] {
-    opacity: .5;
+    opacity: 0.5;
   }
 }

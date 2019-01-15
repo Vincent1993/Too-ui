@@ -1,7 +1,7 @@
-@import '~@/components/Modal/styles/_variables.scss';
+@import '~@/components/Modal/styles/variables';
 
 $landscape-z: $modal-z + 3;
 $landscape-close-fill: (
   light: $white,
-  dark: $black50
+  dark: $black50,
 );

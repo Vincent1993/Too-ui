@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 @mixin landscape-close-base {
   &-close {
@@ -10,16 +10,15 @@
       fill: map-get($landscape-close-fill, 'light');
     }
 
-    &.dark svg {
+    .dark svg {
       fill: map-get($landscape-close-fill, 'dark');
     }
-    &.bottom {
+    .bottom {
       margin-top: 20px;
     }
-    &.top-right {
+    .top-right {
       margin-bottom: 20px;
-    }
-    &.top-right {
+
       text-align: right;
     }
   }

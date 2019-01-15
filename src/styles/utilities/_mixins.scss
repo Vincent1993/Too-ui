@@ -1,4 +1,4 @@
-@import '../themes/index.scss';
+@import '../themes/index';
 
 @mixin hairline-common($color, $direction) {
   position: absolute;
@@ -10,24 +10,24 @@
   background-color: $color;
 
   @if $direction == top {
-    transform: scaleY(.5);
+    transform: scaleY(0.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleY(.33);
+      transform: scaleY(0.33);
     }
   } @else if $direction == bottom {
-    transform: scaleY(.5);
+    transform: scaleY(0.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleY(.33);
+      transform: scaleY(0.33);
     }
   } @else if $direction == left {
-    transform: scaleX(.5);
+    transform: scaleX(0.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleX(.33);
+      transform: scaleX(0.33);
     }
   } @else if $direction == right {
-    transform: scaleX(.5);
+    transform: scaleX(0.5);
     @media (min-resolution: 3dppx) {
-      transform: scaleX(.33);
+      transform: scaleX(0.33);
     }
   }
 }
@@ -39,7 +39,7 @@
   $size: $border-width-base
 ) {
   @if $direction == 'top' {
-    &:after {
+    &::after {
       @include hairline-common($color, $direction);
 
       top: 0;
@@ -53,7 +53,7 @@
       transform-origin: 50% 0;
     }
   } @else if $direction == 'bottom' {
-    &:before {
+    &::before {
       @include hairline-common($color, $direction);
 
       top: auto;
@@ -67,7 +67,7 @@
       transform-origin: 50% 100%;
     }
   } @else if $direction == 'left' {
-    &:after {
+    &::after {
       @include hairline-common($color, $direction);
 
       top: 0;
@@ -81,7 +81,7 @@
       transform-origin: 0 50%;
     }
   } @else if $direction == 'right' {
-    &:before {
+    &::before {
       @include hairline-common($color, $direction);
 
       top: 0;
@@ -95,7 +95,7 @@
       transform-origin: 100% 50%;
     }
   } @else {
-    &:after {
+    &::after {
       position: absolute;
       top: 0;
       right: auto;
@@ -107,7 +107,7 @@
       height: 200%;
 
       content: '';
-      transform: scale(.5);
+      transform: scale(0.5);
       transform-origin: 0 0;
       pointer-events: none;
 
@@ -118,25 +118,25 @@
   }
 }
 
-@mixin hairlineRemove($direction: 'all') {
+@mixin hairline-remove($direction: 'all') {
   @if $direction == 'all' {
-    &:after {
+    &::after {
       display: none;
     }
   } @else if $direction == 'right' {
-    &:before {
+    &::before {
       display: none;
     }
   } @else if $direction == 'left' {
-    &:after {
+    &::after {
       display: none;
     }
   } @else if $direction == 'top' {
-    &:after {
+    &::after {
       display: none;
     }
   } @else if $direction == 'bottom' {
-    &:before {
+    &::before {
       display: none;
     }
   }
@@ -175,10 +175,6 @@
   }
 }
 
-@mixin wordBreak() {
-  word-wrap: break-word;
-  word-break: break-all;
-}
 @mixin word-break {
   word-wrap: break-word;
   word-break: break-all;
@@ -206,7 +202,7 @@
     -webkit-line-clamp: $num;
   }
 }
-@mixin txtOverflow($num: 1, $lineHeight: 20) {
+@mixin txt-overflow($num: 1, $lineHeight: 20) {
   @if $num == 1 {
     overflow: hidden;
 
@@ -230,7 +226,7 @@
 }
 
 @mixin arrow($direction: 'right', $color: $color-text-base) {
-  &:after {
+  &::after {
     display: flex;
 
     padding: 3px;

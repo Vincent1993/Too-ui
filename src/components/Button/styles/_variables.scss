@@ -1,6 +1,6 @@
-@import '~@/styles/utilities/_mixins.scss';
-@import '~@/styles/typography/_mixins.scss';
-@import '~@/styles/themes/index.scss';
+@import '~@/styles/utilities/mixins';
+@import '~@/styles/typography/mixins';
+@import '~@/styles/themes/index';
 
 // Button color map
 $button-color-map: (
@@ -8,42 +8,42 @@ $button-color-map: (
     fill-color: $green50,
     tap-fill-color: $green40,
     text-color: get-theme-prop('text', 'inverse'),
-    border-color: $green50
+    border-color: $green50,
   ),
   secondary: (
     fill-color: $gray50,
     tap-fill-color: $gray40,
     text-color: get-theme-prop('text', 'base'),
-    border-color: $gray50
+    border-color: $gray50,
   ),
   error: (
     fill-color: $red50,
     tap-fill-color: $red40,
     text-color: get-theme-prop('text', 'inverse'),
-    border-color: $red50
+    border-color: $red50,
   ),
   warn: (
     fill-color: $yellow50,
     tap-fill-color: $yellow40,
     text-color: get-theme-prop('text', 'inverse'),
-    border-color: $yellow50
+    border-color: $yellow50,
   ),
   disabled: (
     fill-color: $gray70,
     text-color: $black70,
-    border-color: $gray70
-  )
+    border-color: $gray70,
+  ),
 );
 
 $button-size-map: (
   medium: (
     height: 40 * $hd,
-    padding: $h-spacing-lg
+    padding: $h-spacing-lg,
   ),
   small: (
     height: 30 * $hd,
-    padding: $h-spacing-sm
-  )
+    padding: $h-spacing-sm,
+  ),
 );
 // Button size
 $button-height: 40 * $hd;

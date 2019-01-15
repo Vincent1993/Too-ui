@@ -1,4 +1,4 @@
-@import '_mixins.scss';
+@import 'mixins';
 
 .#{$prefix-name}-switch {
   @include switch-base;

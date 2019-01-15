@@ -31,7 +31,7 @@
     "indentation": 2,
     "length-zero-no-unit": true,
     "max-nesting-depth": [
-      1,
+      3,
       {
         "ignoreAtRules": ["each", "media", "supports", "include"]
       }
@@ -67,7 +67,7 @@
     "selector-pseudo-element-no-unknown": true,
     "shorthand-property-no-redundant-values": true,
     "string-quotes": "single",
-    "value-no-vendor-prefix": true,
+    "value-no-vendor-prefix": null,
     "order/order": [
       [
         "custom-properties",
