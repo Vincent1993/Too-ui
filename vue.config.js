@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 module.exports = {
   lintOnSave: true,
@@ -5,8 +6,8 @@ module.exports = {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        components: path.resolve(__dirname, 'src/components/')
-      }
-    }
-  }
+        components: path.resolve(__dirname, 'src/components/'),
+      },
+    },
+  },
 };

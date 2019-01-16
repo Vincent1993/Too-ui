@@ -1,26 +1,25 @@
-import './src/styles/index.scss'
+/* eslint-disable */
+import './src/styles/index.scss';
 
-import Button from './src/components/Button/'
+import Button from './src/components/Button/';
 
 export const components = {
   Button,
-}
+};
 
 const install = Vue => {
   if (!Vue || install.installed) {
-    return
+    return;
   }
-  const componentsNames = Object.keys(components)
+  const componentsNames = Object.keys(components);
   componentsNames.forEach(name => {
-    const component = components[name]
-    component.name && Vue.component(component.name, component)
-  })
-}
+    const component = components[name];
+    component.name && Vue.component(component.name, component);
+  });
+};
 
-export {
-    Button
-}
+export { Button };
 
 export default {
-    install
-}
+  install,
+};
