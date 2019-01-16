@@ -7,7 +7,9 @@
   width: $switch-width;
   height: $switch-height;
 
-  transition: 0.15s background ease-out;
+  transition: 0.3s background ease-out;
+
+  transition-delay: 0.15s;
 
   border-radius: $switch-radius;
   background: $switch-fill-color;
@@ -44,8 +46,7 @@
 
 @mixin switch-active-base {
   &.active {
-    background-color: $switch-active-fill-color;
-
+    background: $switch-active-fill-color;
     &::before,
     &::after {
       background-color: $switch-fill-color-inverse;
