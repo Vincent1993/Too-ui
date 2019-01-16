@@ -7,7 +7,7 @@ $typography-font-family: 'San Francisco', 'PingFang SC', -apple-system, 'Segoe U
 $typography-base: (
   font-family: $typography-font-family,
   -moz-osx-font-smoothing: grayscale,
-  -webkit-font-smoothing: antialiased,
+  -webkit-font-smoothing: antialiased
 );
 
 $typography-font-weight-values: (
@@ -16,75 +16,73 @@ $typography-font-weight-values: (
   regular: 400,
   medium: 500,
   bold: 700,
-  black: 900,
+  black: 900
 ) !default;
 
-$typography-styles: typography-set-styles(
-  $typography-base,
-  (
-    headline6: (
-      font-size: 1.25rem,
-      line-height: 2rem,
-      font-weight: map-get($typography-font-weight-values, medium),
-      letter-spacing: typography-get-letter-spacing(0.25, 1.25),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    subtitle1: (
-      font-size: 1rem,
-      line-height: 1.75rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.15, 1),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    body1: (
-      font-size: 1rem,
-      line-height: 1.5rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.5, 1),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    body2: (
-      font-size: 0.875rem,
-      line-height: 1.25rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.25, 0.875),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    caption: (
-      font-size: 0.75rem,
-      line-height: 1.25rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.4, 0.75),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    placeholder: (
-      font-size: 0.75rem,
-      line-height: 1.25rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.4, 0.75),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    disabled: (
-      font-size: 0.75rem,
-      line-height: 1.25rem,
-      font-weight: map-get($typography-font-weight-values, regular),
-      letter-spacing: typography-get-letter-spacing(0.4, 0.75),
-      text-decoration: inherit,
-      text-transform: inherit,
-    ),
-    button: (
-      font-size: 0.75rem,
-      line-height: 2rem,
-      font-weight: map-get($typography-font-weight-values, medium),
-      letter-spacing: typography-get-letter-spacing(1.5, 0.75),
-      text-decoration: none,
-      text-transform: uppercase,
-    ),
+$typography-styles: typography-set-styles($typography-base,
+(
+  headline6: (
+    font-size: 1.25rem,
+    line-height: 2rem,
+    font-weight: map-get($typography-font-weight-values, medium),
+    letter-spacing: typography-get-letter-spacing(0.25, 1.25),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  subtitle1: (
+    font-size: 1rem,
+    line-height: 1.75rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.15, 1),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  body1: (
+    font-size: 1rem,
+    line-height: 1.5rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.5, 1),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  body2: (
+    font-size: 0.875rem,
+    line-height: 1.25rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.25, 0.875),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  caption: (
+    font-size: 0.75rem,
+    line-height: 1.25rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.4, 0.75),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  placeholder: (
+    font-size: 0.75rem,
+    line-height: 1.25rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.4, 0.75),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  disabled: (
+    font-size: 0.75rem,
+    line-height: 1.25rem,
+    font-weight: map-get($typography-font-weight-values, regular),
+    letter-spacing: typography-get-letter-spacing(0.4, 0.75),
+    text-decoration: inherit,
+    text-transform: inherit
+  ),
+  button: (
+    font-size: 0.75rem,
+    line-height: 2rem,
+    font-weight: map-get($typography-font-weight-values, medium),
+    letter-spacing: typography-get-letter-spacing(1.5, 0.75),
+    text-decoration: none,
+    text-transform: uppercase
   )
-);
+));

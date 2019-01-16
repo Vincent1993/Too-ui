@@ -91,7 +91,6 @@
   "lint-staged": {
     "src/{styles,components}/**/*.scss": [
       "stylelint --syntax scss",
-      "node ./bin/pre-prettier.js",
       "git add"
     ],
     "src/components/**/*.js": [

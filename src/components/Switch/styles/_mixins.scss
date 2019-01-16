@@ -52,9 +52,7 @@
       background-color: $switch-fill-color-inverse;
     }
     &::after {
-      transform: translateX(
-        ($switch-width - $switch-handle-width) - $switch-handle-edge-offset * 2
-      );
+      transform: translateX(($switch-width - $switch-handle-width) - $switch-handle-edge-offset * 2);
     }
     &::before {
       transform: scale(0);
