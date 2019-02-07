@@ -10,7 +10,12 @@ module.exports = {
       description: 'Mobile UI Toolkit baseed on Vue',
     },
   },
+
+  plugins: ['@vuepress/search'],
+  theme: '@vuepress/theme-default',
   themeConfig: {
+    lastUpdated: '最后更新于',
+    repo: 'https://github.com/Vincent1993/Tofo-ui',
     locales: {
       '/': {
         selectText: '选择语言',
