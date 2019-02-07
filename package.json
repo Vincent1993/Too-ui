@@ -12,6 +12,8 @@
     "src"
   ],
   "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "bootstrap": "yarn | npm install",
     "serve": "vue-cli-service serve --open --port 8989",
     "build:lib": "vue-cli-service build  --target lib --name too-ui ./src/components/index.js --dest lib --no-clean",
@@ -30,7 +32,8 @@
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
     "vue-tsx-support": "^2.0.0",
-    "vue-types": "^1.2.2"
+    "vue-types": "^1.2.2",
+    "vuepress": "next"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.0.0-beta.44",
@@ -51,6 +54,7 @@
     "babel-plugin-jsx-v-model": "^2.0.3",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "chalk": "^2.4.1",
+    "clipboard": "^2.0.4",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
     "friendly-errors-webpack-plugin": "^1.7.0",
