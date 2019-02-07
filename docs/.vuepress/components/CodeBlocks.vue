@@ -60,37 +60,52 @@ export default {
   }
 
   &-block {
+    display: flex;
+
+    margin-top: 2rem;
+
     border: 2px solid #f5f5f5;
     border-radius: 6px;
-    display: flex;
-    margin-top: 2rem;
+    a {
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
   }
   &-preview {
-    flex: 1;
-    padding: 1rem;
     position: relative;
+
+    flex: 1;
+
+    padding: 1rem;
     &:before {
-      content: 'Snipnet';
-      align-items: stretch;
-      display: flex;
-      background: #ffd16d;
-      border-radius: 2px 2px 0 0;
+      position: absolute;
       bottom: 100%;
-      color: rgba(0, 0, 0, 0.7);
-      font-size: 7px;
-      font-weight: 700;
       left: -1px;
-      letter-spacing: 1px;
+
+      display: flex;
+      align-items: stretch;
+
       margin-left: -1px;
       padding: 3px 5px;
-      position: absolute;
-      text-transform: uppercase;
+
+      content: 'Snipnet';
       vertical-align: top;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: rgba(0, 0, 0, 0.7);
+      border-radius: 2px 2px 0 0;
+      background: #ffd16d;
+
+      font-size: 7px;
+      font-weight: 700;
     }
   }
   &-code {
-    flex: 1;
     position: relative;
+
+    flex: 1;
     pre[class*='language-'],
     div[class*='language-'],
     &.is-highlight {
@@ -109,21 +124,24 @@ export default {
       color: #4a4a4a !important;
     }
     .copy-btn {
-      border-radius: 2px;
-      background: 0 0;
-      border: none;
-      color: #4a4a4a;
-      cursor: pointer;
-      font-size: 0.625rem;
-      outline: 0;
       position: absolute;
-      right: 0.25rem;
-      top: 0.25rem;
       z-index: 3;
+      top: 0.25rem;
+      right: 0.25rem;
+
+      cursor: pointer;
+
+      color: #4a4a4a;
+      border: none;
+      border-radius: 2px;
+      outline: 0;
+      background: 0 0;
+
+      font-size: 0.625rem;
       line-height: 2;
       &:hover {
-        background-color: #ffd16d;
         color: rgba(0, 0, 0, 0.7);
+        background-color: #ffd16d;
       }
     }
   }
