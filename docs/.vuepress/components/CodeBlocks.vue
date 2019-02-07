@@ -1,16 +1,5 @@
 <template>
   <div class="snippet">
-    <h4
-      v-text="title"
-      :id="title"
-      class="snippet-title"
-    />
-    <div
-      v-if="$slots.description"
-      class="snippet-description"
-    >
-      <slot name="description"></slot>
-    </div>
     <div class="snippet-block">
       <div class="snippet-preview">
         <slot></slot>
@@ -36,12 +25,6 @@ export default {
     return {
       highlightSnippetCode: false,
     };
-  },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
   },
   computed: {
     codeBlockClass() {
@@ -75,19 +58,7 @@ export default {
       margin-bottom: 1rem;
     }
   }
-  &-title {
-    word-break: break-word;
 
-    color: #363636;
-
-    font-size: 1.5rem;
-    line-height: 1.125;
-    text-transform: capitalize;
-  }
-
-  &-description {
-    padding: 1rem 0;
-  }
   &-block {
     border: 2px solid #f5f5f5;
     border-radius: 6px;
