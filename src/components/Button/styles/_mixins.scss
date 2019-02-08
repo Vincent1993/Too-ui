@@ -8,6 +8,8 @@
   position: relative;
 
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   box-sizing: border-box;
 
@@ -19,25 +21,25 @@
   border-radius: $button-border-radius;
   outline: none;
 
-  align-items: center;
+
   -webkit-appearance: none;
-  justify-content: center;
   -webkit-tap-highlight-color: transparent;
   &[disabled] {
     @include theme-prop(
       'background-color',
       map-get(map-get($button-color-map, 'disabled'), 'fill-color')
     );
+    @include theme-prop(
+      'color',
+      map-get(map-get($button-color-map, 'disabled'), 'text-color')
+    );
     @include hairline(
       'all',
       map-get(map-get($button-color-map, 'disabled'), 'border-color'),
       $button-border-radius
     );
-
     cursor: not-allowed;
     pointer-events: none;
-
-    opacity: 0.5;
   }
 }
 
@@ -78,10 +80,13 @@
 }
 
 @mixin button-gutter($size) {
-  min-width: map-get(map-get($button-size-map, $size), 'height');
-  height: map-get(map-get($button-size-map, $size), 'height');
-  padding: 0 map-get(map-get($button-size-map, $size), 'padding');
+  min-width: $default-button-height;
+  height: $default-button-height;
+  padding: 0 $default-button-horizontal-padding;
+
+  transform: scale($size);
 }
+
 @mixin button-subtle($color) {
   @include hairline-remove;
   @include button-container-fill-color(transparent);
@@ -101,12 +106,13 @@
 }
 
 @mixin button-inactive {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 @mixin button-round {
   border-radius: $button-border-radius-round;
 }
+
 @mixin button-sticky {
   &.sticky {
     @include hairline-remove;
@@ -143,7 +149,6 @@
 
 @mixin button-group-addons {
   display: flex;
-
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -155,6 +160,10 @@
     &:not(:first-child) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      &::after {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
 
     &:not(:last-child) {
@@ -162,6 +171,10 @@
 
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      &::after {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
     &.block {
       flex: 1 1 0;

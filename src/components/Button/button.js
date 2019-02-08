@@ -5,7 +5,7 @@ import PropTypes from 'vue-types';
   props: {
     type: PropTypes.oneOf(['primary', 'warn', 'error', 'secondary']).def('primary'),
     prefixCls: PropTypes.string.def('to-button'),
-    size: PropTypes.oneOf(['small', 'medium']).def('medium'),
+    size: PropTypes.oneOf(['small', 'medium', 'normal', 'large']).def('normal'),
     subtle: PropTypes.bool.def(false),
     inactive: PropTypes.bool.def(false),
     disabled: PropTypes.bool.def(false),
@@ -51,7 +51,7 @@ class Button extends Vue {
         onClick={this.clickHandler.bind(this)}
         aria-disabled={this.disabled}
       >
-        {this.loading ? null : this.$slots.default}
+        {this.$slots.default}
       </a>
     );
   }

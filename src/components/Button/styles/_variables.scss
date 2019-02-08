@@ -1,3 +1,4 @@
+@import '~@/styles/utilities/functions';
 @import '~@/styles/utilities/mixins';
 @import '~@/styles/typography/mixins';
 @import '~@/styles/themes/index';
@@ -29,27 +30,21 @@ $button-color-map: (
     border-color: $yellow50,
   ),
   disabled: (
-    fill-color: $gray70,
-    text-color: $black70,
-    border-color: $gray70,
+    fill-color: $gray30,
+    text-color:  get-theme-prop('text', 'disabled'),
+    border-color: $gray40,
   ),
 );
 
 $button-size-map: (
-  medium: (
-    height: 40 * $hd,
-    padding: $h-spacing-lg,
-  ),
-  small: (
-    height: 30 * $hd,
-    padding: $h-spacing-sm,
-  ),
+  large: 1.24,
+  normal: 1,
+  medium: 1,
+  small: 0.75,
 );
-// Button size
-$button-height: 40 * $hd;
-$button-height-s: 30 * $hd;
 
-$button-font-size: 18 * $hd;
+// Button size
+$default-button-height: 40 * $hd;
 
 // Button border
 $button-border-radius: 5 * $hd;
@@ -57,4 +52,4 @@ $button-border-radius-round: $radius-round;
 $button-border-color: $gray50;
 
 // Button gutter
-$button-horizontal-padding: $h-spacing-lg;
+$default-button-horizontal-padding: $h-spacing-lg;

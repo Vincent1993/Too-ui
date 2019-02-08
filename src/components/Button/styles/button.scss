@@ -4,9 +4,9 @@
 .#{$prefix-name}-button {
   @include button-base;
   // Size map for medium, small
-  @each $size in map-keys($button-size-map) {
+  @each $size, $transform-size in $button-size-map {
     &.#{$size} {
-      @include button-gutter($size);
+      @include button-gutter($transform-size);
     }
   }
 
