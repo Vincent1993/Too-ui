@@ -20,8 +20,9 @@ import Landscape from './Landscape';
 import Field from './Field/';
 import Switch from './Switch';
 
-export {
+const components = {
   Button,
+  ButtonGroup: Button.Group,
   Modal,
   CellItem,
   Toast,
@@ -29,5 +30,6 @@ export {
   Dialog,
   Landscape,
   Field,
-  Switch
+  Toggle: Switch,
 };
+export default components;
