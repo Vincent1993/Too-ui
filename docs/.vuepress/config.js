@@ -24,7 +24,7 @@ module.exports = {
           {
             title: 'Basic 基础控件',
             collasable: false,
-            children: ['/components/button.md'],
+            children: ['/components/button.md', '/components/cell-item.md'],
           },
         ],
       },
