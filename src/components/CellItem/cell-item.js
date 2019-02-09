@@ -25,14 +25,14 @@ export default class CellItem extends Vue {
     ) : null;
   }
   get briefRender() {
-    return this.brief ? (
-      <div class={`${this.prefixCls}-brief`} domPropsInnerHTML={this.brief} />
+    return this.brief || this.$slots.brief ? (
+      <div class={`${this.prefixCls}-brief`}>{this.brief || this.$slots.brief}</div>
     ) : null;
   }
 
   get addonRender() {
     return this.addon || this.$slots.right ? (
-      <div class={`${this.prefixCls}-addon`} domPropsInnerHTML={this.addon || this.$slot.right} />
+      <div class={`${this.prefixCls}-addon`}>{this.addon || this.$slots.right}</div>
     ) : null;
   }
   get mainRender() {
