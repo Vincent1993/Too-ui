@@ -1,10 +1,13 @@
 ---
 title: Cell Item 列表单元
+description: 单元格列表用于展现并列层级的信息内容。
+lang: 'zh-CN'
 ---
 
+### Cell Item 列表单元
+> CellItem 单元格列表用于展现并列层级的信息内容。
+
 <ClientOnly>
-  ### Cell Item 列表单元
-  > CellItem 单元格列表用于展现并列层级的信息内容。
 
 #### 基础用法
 

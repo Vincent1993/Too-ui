@@ -3,10 +3,11 @@ title: Switch 开关
 description: 开关按钮，用于表示开关状态/两种状态之间的切换
 lang: 'zh-CN'
 ---
+### Switch 开关
+> 开关按钮，用于表示开关状态/两种状态之间的切换
 
 <ClientOnly>
-### Switch 开关
-> {{ $description }}
+
 
 ::: tip
   如果需要在`jsx`中使用`v-model` 可以安装 [babel-plugin-jsx-v-model](https://github.com/nickmessing/babel-plugin-jsx-v-model)
