@@ -26,6 +26,11 @@ module.exports = {
             collasable: false,
             children: ['/components/button.md', '/components/cell-item.md'],
           },
+          {
+            title: 'Form 表单控件',
+            collasable: false,
+            children: ['/components/switch.md']
+          },
         ],
       },
     },
