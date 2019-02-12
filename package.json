@@ -27,7 +27,7 @@
     "e2e:open": "vue-cli-service e2e:open"
   },
   "dependencies": {
-    "vue": "2.5.16",
+    "vue": "2.6.5",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
@@ -75,7 +75,7 @@
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.5.0",
     "typescript": "^3.2.2",
-    "vue-template-compiler": "2.5.16",
+    "vue-template-compiler": "2.6.5",
     "vuepress": "next",
     "webpack-cli": "^3.1.2"
   },
