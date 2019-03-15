@@ -10,7 +10,7 @@ module.exports = {
       description: 'Mobile UI Toolkit baseed on Vue',
     },
   },
-
+  base: '/Too-ui/',
   plugins: ['@vuepress/search'],
   theme: '@vuepress/theme-default',
   themeConfig: {
@@ -29,7 +29,7 @@ module.exports = {
           {
             title: 'Form 表单控件',
             collasable: false,
-            children: ['/components/switch.md']
+            children: ['/components/switch.md'],
           },
         ],
       },
